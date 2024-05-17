@@ -57,6 +57,23 @@ func ConDupTwo(_ nums: [Int], _ k: Int) -> Bool {
 } 
 // print(ConDupTwo([1,2,3,1,2,3], 3))
 // print(ConDupTwo([1,0,1,1], 1))
-//-----------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------
 
+//Q4. Remove Duplicate
+func RemoveDup(_ nums:  [Int] ) -> Int {
+	if nums.isEmpty { return 0 }
+	
+	var nums = nums
+	var index = 1
+	for i in 1..<nums.count {
+		if nums[i-1] != nums[i] {
+		   nums[index] = nums[i]
+		   index += 1
+		}
+	}
+	// print("\(nums)")
+	return index
+	
+
+}
 
