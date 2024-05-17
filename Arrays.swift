@@ -16,6 +16,20 @@ func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
  print(twoSum([1,5,4], 6))
 
  //-------------------------------------------------------------------------------------------
+//Q2. Contains duplicate (217)
 
+func ConDup(_ nums: [Int]) -> Bool {
+	var dict = [Int : Int]()
+	
+	for item in nums {
+		if dict[item] != nil {
+			 return true
+		} else {
+			dict[item] = 1
+		}
+	}
+	 return false
+}
+// print(ConDup([0,3,0,1,4,2]))
 
 
