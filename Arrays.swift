@@ -77,3 +77,23 @@ func RemoveDup(_ nums:  [Int] ) -> Int {
 }
 //--------------------------------------------------------------------------------------------
 
+ // Solution 2: 
+func removeDuplicates(_ nums: [Int]) -> Int {
+        var emptyArray = [Int]()
+        var currentNumber: Int? = nil
+        var nums = nums
+        
+        for (index, value) in nums.enumerated() {
+            if currentNumber == nil || currentNumber != value {
+                currentNumber = nums[index]
+                emptyArray.append(currentNumber!)
+            }
+        }
+        
+        nums = emptyArray
+        return nums.count
+}
+// print(removeDuplicates([1,1,2]))
+// print(RemoveDup([1,1,2]))
+
+//-----------------------------------------------------------------------------------------------
