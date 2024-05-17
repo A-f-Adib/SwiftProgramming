@@ -32,4 +32,31 @@ func ConDup(_ nums: [Int]) -> Bool {
 }
 // print(ConDup([0,3,0,1,4,2]))
 
+//------------------------------------------------------------------------------------
+
+// Q3. Contains duplicae II (219)
+
+func ConDupTwo(_ nums: [Int], _ k: Int) -> Bool {
+	var dict = [Int : Int]()
+	var minDis = Int.max
+
+	for (index, item) in nums.enumerated() {
+		if dict[item] != nil {
+			let prevIndex = dict[item]!
+			let gap = index - prevIndex
+			minDis = min(gap, minDis)
+
+		} else {
+			dict[item ] = index
+		}
+	}
+	if minDis <= k {
+		return true
+	}
+	return false
+} 
+// print(ConDupTwo([1,2,3,1,2,3], 3))
+// print(ConDupTwo([1,0,1,1], 1))
+//-----------------------------------------------------------------------------------
+
 
