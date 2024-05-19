@@ -30,7 +30,7 @@ func ConDup(_ nums: [Int]) -> Bool {
 	}
 	 return false
 }
-// print(ConDup([0,3,0,1,4,2]))
+//print(ConDup([0,3,0,1,4,2]))
 
 //------------------------------------------------------------------------------------
 
@@ -97,3 +97,23 @@ func removeDuplicates(_ nums: [Int]) -> Int {
 // print(RemoveDup([1,1,2]))
 
 //-----------------------------------------------------------------------------------------------
+
+// Q5. Remove Duplicates II
+
+func removeDups2(_ nums: [Int]) -> Int {
+
+	if nums.count <= 2 { return nums.count }
+	var nums = nums
+	var index = 1
+
+	for i in 2..<nums.count {
+		if nums[index - 1] != nums[index] || nums[i] != nums[index] {
+			index += 1
+			nums[index] = nums[i]
+		}
+		print("\(i)", nums)
+	}
+	return index + 1
+}
+
+print(removeDups2([1,1,1,2,2,3]))
