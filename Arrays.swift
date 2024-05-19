@@ -115,5 +115,15 @@ func removeDups2(_ nums: [Int]) -> Int {
 	}
 	return index + 1
 }
-
+// sol-2
+func removeDups(_ nums: inout [Int]) -> Int {
+        var i = 0
+        for num in nums {
+            if i < 2 || num != nums[i - 2] {
+                nums[i] = num
+                i += 1
+            }
+        }
+        return i
+}
 print(removeDups2([1,1,1,2,2,3]))
