@@ -126,4 +126,23 @@ func removeDups(_ nums: inout [Int]) -> Int {
         }
         return i
 }
-print(removeDups2([1,1,1,2,2,3]))
+//print(removeDups2([1,1,1,2,2,3]))
+//-------------------------------------------------------------------------------------------------
+
+//Q6. Remove Element
+func RemoveElement(_ nums : [Int], _ val: Int) -> Int {
+	let nums = nums
+	if nums.count <= 0 { return nums.count } 
+
+    var emptyArray = [Int]()
+	for num in nums {
+		if num != val {
+			emptyArray.append(num)
+		}
+	}
+	print(emptyArray)
+	return emptyArray.count
+
+}
+print(RemoveElement([0,1,2,2,3,0,4,2], 2))
+print(RemoveElement([3,2,2,3], 3))
