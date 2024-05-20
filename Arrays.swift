@@ -166,4 +166,27 @@ func removeZeros(_ nums: [Int] ) -> [Int] {
 	}
 	return nums
 }
-print(removeZeros([0,1,2,3,0,5,6]))
+//print(removeZeros([0,1,2,3,0,5,6]))
+//---------------------------------------------------------------------------------------
+
+//Q8. FizzBuzz
+func fizzBuzz(_ num: Int) -> [String] {
+        
+        var result = [String]()
+
+        for i in 1...num {
+		 if (i % 3 == 0 && i % 5 == 0) {
+			result.append("FizzBuzz")
+		}
+		  else if i % 3 == 0 {
+			result.append("Fizz")
+		} else if i % 5 == 0 {
+			result.append("Buzz")
+		} else{
+			result.append("\(i)")
+		}
+	}
+    return result
+    }
+
+print(fizzBuzz(15))
