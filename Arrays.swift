@@ -189,4 +189,23 @@ func fizzBuzz(_ num: Int) -> [String] {
     return result
     }
 
-print(fizzBuzz(15))
+// print(fizzBuzz(15))
+//-----------------------------------------------------------------------------------------------
+
+//Q9. Palindromic string
+func PalindromicString(_ str: String) -> Bool {
+	let arr = Array(str)
+	var i = 0
+	var j = arr.count - 1
+
+	while i <= j {
+		if arr[i] == arr [j] {
+			i += 1
+			j -= 1
+		} else {
+			return false
+		}
+	}
+	return true
+}
+print(PalindromicString("fool"))
