@@ -208,4 +208,23 @@ func PalindromicString(_ str: String) -> Bool {
 	}
 	return true
 }
-print(PalindromicString("fool"))
+// print(PalindromicString("fool"))
+//------------------------------------------------------------------------------------------------
+
+//Q10. First unique character in a string
+
+func firstUniqueC(_ str : String) -> Bool {
+	let arr = Array(str)
+	
+	var index = 1
+	for item in arr {
+		if item != arr[index] {
+		   index += 1
+		} else {
+			return false
+		}
+	}
+	// print("\(nums)")
+	return true
+}
+print(firstUniqueC("abcdb"))
