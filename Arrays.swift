@@ -144,5 +144,26 @@ func RemoveElement(_ nums : [Int], _ val: Int) -> Int {
 	return emptyArray.count
 
 }
-print(RemoveElement([0,1,2,2,3,0,4,2], 2))
-print(RemoveElement([3,2,2,3], 3))
+// print(RemoveElement([0,1,2,2,3,0,4,2], 2))
+// print(RemoveElement([3,2,2,3], 3))
+//-------------------------------------------------------------------------------------------
+
+//Q7. Remove zeros
+func removeZeros(_ nums: [Int] ) -> [Int] {
+	
+	var nums = nums
+	var index = 0
+
+	for num in nums {
+		if num != 0 {
+			nums[index] = num
+			index += 1
+		}
+	}
+	while index < nums.count {
+		nums[index] = 0
+		index += 1
+	}
+	return nums
+}
+print(removeZeros([0,1,2,3,0,5,6]))
