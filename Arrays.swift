@@ -224,7 +224,6 @@ func firstUniqueC(_ str : String) -> Bool {
 			return false
 		}
 	}
-	// print("\(nums)")
-	return true
+	
 }
 print(firstUniqueC("abcdb"))
