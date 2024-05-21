@@ -219,8 +219,5 @@ func firstUniqueC(_ str : String) -> Bool {
 	var index = 1
 	for item in arr {
 		if item != arr[index] {
-		   index += 1
-		} else {
-	
 }
 print(firstUniqueC("abcdb"))
