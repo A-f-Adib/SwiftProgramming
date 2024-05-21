@@ -239,28 +239,7 @@ func firstUniqueC(_ str : String) -> Int {
 //Q11. Valid Palindrome II
 
 func PalindromicString2(_ str: String) -> Bool {
-	let arr = Array(str)
-	var i = 0
-	var j = arr.count - 1
-	var count = 0
 
-	while i <= j {
-		if arr[i] == arr [j] {
-			i += 1
-			j -= 1
-		} else if arr[i] != arr[j] {
-            j -= 1
-			count += 1
-		} 
-		else if arr[j] != arr[i] {
-			i += 1
-			count += 1
-		}
 
-	   if count > 1 {
-		return false
-	    } 
-	}
-	return true
 }
- print(PalindromicString2("meeee"))
+ print(PalindromicString2("deeeem"))
