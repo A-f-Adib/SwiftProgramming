@@ -214,8 +214,8 @@ func PalindromicString(_ str: String) -> Bool {
 //Q10. First unique character in a string
 
 func firstUniqueC(_ str : String) -> Bool {
-	let arr = Array(str)
 	
-
 }
 print(firstUniqueC("abcdb"))
+
+//----------------------------------------------------------------------------------------
