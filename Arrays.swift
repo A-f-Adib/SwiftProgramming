@@ -216,8 +216,5 @@ func PalindromicString(_ str: String) -> Bool {
 func firstUniqueC(_ str : String) -> Bool {
 	
 
-	
 }
-print(firstUniqueC("abcdb"))
-
-//----------------------------------------------------------------------------------------
+print(firstUniqueC(""))
