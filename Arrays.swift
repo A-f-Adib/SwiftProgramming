@@ -216,8 +216,6 @@ func PalindromicString(_ str: String) -> Bool {
 func firstUniqueC(_ str : String) -> Bool {
 	let arr = Array(str)
 	
-	var index = 1
-	for item in arr {
-		if item != arr[index] {
+
 }
 print(firstUniqueC("abcdb"))
