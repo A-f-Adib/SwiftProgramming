@@ -238,8 +238,13 @@ func firstUniqueC(_ str : String) -> Int {
 
 //Q11. Valid Palindrome II
 
-func PalindromicString2(_ str: String) -> Bool {
+func PalindromicString2(_ s: String) -> Bool {
+let arr = Array(s)
 
+return internalFunc()
+}
+
+func internalFunc() -> Bool {
 
 }
  print(PalindromicString2("deeeem"))
