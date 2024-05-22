@@ -241,14 +241,14 @@ func firstUniqueC(_ str : String) -> Int {
 func PalindromicString2(_ s: String) -> Bool {
 let arr = Array(s)
 
-return internalFunc(arr, 0, arr.count -1, false)
+return internalFunc(arr, 0, arr.count - 1, false)
 }
 
 func internalFunc(_ arr : [Character], _ start : Int, _ end : Int, _ removed : Bool) -> Bool {
    var i = start
    var j = end
 
-   while (i <= j ){
+   while i <= j {
 	if arr[i] == arr[j] {
 		i += 1
 		j -= 1
@@ -256,10 +256,11 @@ func internalFunc(_ arr : [Character], _ start : Int, _ end : Int, _ removed : B
 		if removed == true {
 			return false
 		} else {
-			internalFunc(arr, i + 1, j, true) || internalFunc(arr, i, j - 1, true)
+			return internalFunc(arr, i + 1, j, true) || internalFunc(arr, i, j - 1, true)
 		}
-	}
+	 }
    }
    return true
 }
- print(PalindromicString2("deeeem"))
+//  print(PalindromicString2("abca"))
+//------------------------------------------------------------------------------------
