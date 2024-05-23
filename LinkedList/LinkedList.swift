@@ -6,4 +6,11 @@ class LinkedList {
         newNode.next = head
         head = newNode
     }
+
+    func append(data: Int) {
+        if head == nil {
+            insert(data: data)
+            return
+        }
+    }
 }
