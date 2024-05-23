@@ -12,5 +12,13 @@ class LinkedList {
             insert(data: data)
             return
         }
+
+        var curr = head 
+        while curr!.next != nil {
+            curr = curr!.next
+        }
+
+        let newNode = Node(data: data)
+        curr!.next = newNode
     }
 }
