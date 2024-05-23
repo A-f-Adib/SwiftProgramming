@@ -30,3 +30,21 @@ class LinkedList {
         }
     }
 }
+
+class Node {
+  var data : Int
+  var next : Node?
+
+  init(data: Int) {
+    self.data = data
+  }
+    
+}
+
+let list = LinkedList()
+list.insert(data: 10)
+list.insert(data: 9)
+list.insert(data: 8)
+list.printList()
+list.append(data: 11)
+list.printList()
