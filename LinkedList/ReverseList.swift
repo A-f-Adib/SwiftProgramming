@@ -42,8 +42,14 @@ class Node {
 }
 
 
+
+
 var list = LinkedList()
+print("LinkedList:")
 list.append(data: 1)
 list.append(data: 2)
 list.append(data: 3)
+list.append(data: 4)
+list.append(data: 5)
 list.printList()
+print("Reversed LinkedList:")
