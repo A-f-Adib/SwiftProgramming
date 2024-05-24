@@ -1,3 +1,13 @@
+
+class Node {
+  var data : Int
+  var next : Node?
+
+  init(data: Int) {
+    self.data = data
+  }
+}
+
 class LinkedList {
     
     var head : Node?
@@ -32,19 +42,28 @@ class LinkedList {
     }
 }
 
-class Node {
-  var data : Int
-  var next : Node?
 
-  init(data: Int) {
-    self.data = data
-  }
+var list = LinkedList()
+
+//Main Function
+func reverseList() {
+    var curr = list.head
+    var next : Node?
+    var prev: Node?
+
+    while curr != nil  {
+        next = curr!.next
+        curr!.next = prev
+        prev = curr
+        curr = next
+    }
+
+    list.head = prev
 }
 
 
+//Output: 
 
-
-var list = LinkedList()
 print("LinkedList:")
 list.append(data: 1)
 list.append(data: 2)
@@ -53,3 +72,5 @@ list.append(data: 4)
 list.append(data: 5)
 list.printList()
 print("Reversed LinkedList:")
+reverseList()
+list.printList()
