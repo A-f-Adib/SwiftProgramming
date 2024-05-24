@@ -34,6 +34,29 @@ class LinkedList {
         return curr
     }
 
+    //For Deleting
+    func delete(key : Int) -> Node? {
+        if head == nil {
+            return nil 
+        }
+
+        var curr = head
+        var prev = Node?
+
+        while curr != nil && curr!.data != key {
+            prev = curr
+            curr = curr!.next
+        }
+
+        if prev == nil {
+            head = curr!.next
+        } else {
+            prev.next = curr!.next
+        }
+
+        return curr
+    }
+
     func printList(){
         var curr = head
         while curr != nil {
