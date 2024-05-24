@@ -1,4 +1,6 @@
+
 class LinkedList {
+    
     var head : Node?
 
     func insert(data: Int) {

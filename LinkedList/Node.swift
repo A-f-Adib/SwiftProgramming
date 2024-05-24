@@ -5,5 +5,4 @@ class Node {
   init(data: Int) {
     self.data = data
   }
-    
 }
