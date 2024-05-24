@@ -39,19 +39,20 @@ class LinkedList {
         if head == nil {
             return nil 
         }
-
         var curr = head
-        var prev = Node?
+        var prev : Node?
 
         while curr != nil && curr!.data != key {
             prev = curr
             curr = curr!.next
         }
 
-        if prev == nil {
+        if prev == nil && curr != nil {
             head = curr!.next
+        } else if curr == nil {
+            return nil
         } else {
-            prev.next = curr!.next
+            prev!.next = curr!.next
         }
 
         return curr
@@ -77,12 +78,17 @@ class Node {
 }
 
 let list = LinkedList()
+print("LinkedList:")
 list.insert(data: 10)
 list.insert(data: 9)
 list.insert(data: 8)
+list.insert(data: 7)
+list.append(data: 11)
 list.printList()
-// list.append(data: 11)
-// list.printList()
 
-let found = list.find(key: 11)
+let found = list.find(key: 10)
 print("Search data: \(found?.data ?? -1 )")
+
+let key = list.delete(key: 8)
+print("After deleting:")
+list.printList()
