@@ -24,6 +24,16 @@ class LinkedList {
         curr!.next = newNode
     }
 
+    //For searching
+    func find(key: Int) -> Node? {
+        var curr = head
+
+        while curr != nil && curr!.data != key {
+            curr = curr!.next
+        }
+        return curr
+    }
+
     func printList(){
         var curr = head
         while curr != nil {
@@ -48,5 +58,8 @@ list.insert(data: 10)
 list.insert(data: 9)
 list.insert(data: 8)
 list.printList()
-list.append(data: 11)
-list.printList()
+// list.append(data: 11)
+// list.printList()
+
+let found = list.find(key: 11)
+print("Search data: \(found?.data ?? -1 )")
