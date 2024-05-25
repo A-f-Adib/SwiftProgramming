@@ -58,7 +58,13 @@ class LinkedList {
         return curr
     }
 
-   
+    func printList(){
+        var curr = head
+        while curr != nil {
+            print(curr!.data)
+            curr = curr!.next
+        }
+    }
 }
 
 class Node {
