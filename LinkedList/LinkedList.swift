@@ -36,6 +36,7 @@ class LinkedList {
 
     //For Deleting
     func delete(key : Int) -> Node? {
+
         if head == nil {
             return nil 
         }
@@ -54,8 +55,7 @@ class LinkedList {
         } else {
             prev!.next = curr!.next
         }
-
-        return curr
+         return curr
     }
 
     func printList(){
@@ -74,8 +74,9 @@ class Node {
   init(data: Int) {
     self.data = data
   }
-    
 }
+
+//Output:
 
 let list = LinkedList()
 print("LinkedList:")
