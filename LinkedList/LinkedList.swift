@@ -25,14 +25,7 @@ class LinkedList {
     }
 
     //For searching
-    func find(key: Int) -> Node? {
-        var curr = head
-
-        while curr != nil && curr!.data != key {
-            curr = curr!.next
-        }
-        return curr
-    }
+   
 
     //For Deleting
     func delete(key : Int) -> Node? {
