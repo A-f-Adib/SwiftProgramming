@@ -67,15 +67,7 @@ class LinkedList {
     }
 }
 
-class Node {
-  var data : Int
-  var next : Node?
 
-  init(data: Int) {
-    self.data = data
-  }
-    
-}
 
 let list = LinkedList()
 print("LinkedList:")
