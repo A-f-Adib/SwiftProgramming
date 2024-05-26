@@ -1,4 +1,5 @@
-func mergeTwoList(_ l1 : Node?, _l2: Node?) -> Node? {
+
+func mergeTwoList(_ l1 : Node?, _ l2: Node?) -> Node? {
 
     var list1 = l1
     var list2 = l2
@@ -37,10 +38,18 @@ class Node {
 }
 
 //Input:
-var list1 = Node(data: 1)
+var list1 = Node(data: 2)
 list1.next = Node(data: 3)
 
 var list2 = Node(data: 1)
 list2.next = Node(data: 2)
 list2.next!.next = Node(data: 3)
 list2.next!.next!.next = Node(data: 4)
+
+//OutPut:
+let result = mergeTwoList(list1, list2)
+var curr = result
+while curr != nil {
+    print(curr!.data)
+    curr = curr!.next
+}
