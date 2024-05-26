@@ -17,5 +17,12 @@ func mergeTwoList(_ l1 : Node?, _l2: Node?) -> Node? {
         result = result!.next
     }
 
-    
+    if list1 != nil {
+        result!.next = list1
+    } else {
+        result!.next = list2
+    }
+
+    head = head!.next
+    return head
 }
