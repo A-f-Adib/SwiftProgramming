@@ -26,3 +26,21 @@ func mergeTwoList(_ l1 : Node?, _l2: Node?) -> Node? {
     head = head!.next
     return head
 }
+
+class Node {
+  var data : Int
+  var next : Node?
+
+  init(data: Int) {
+    self.data = data
+  }
+}
+
+//Input:
+var list1 = Node(data: 1)
+list1.next = Node(data: 3)
+
+var list2 = Node(data: 1)
+list2.next = Node(data: 2)
+list2.next!.next = Node(data: 3)
+list2.next!.next!.next = Node(data: 4)
