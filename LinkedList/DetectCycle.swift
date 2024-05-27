@@ -8,7 +8,7 @@ public class ListNode {
     }
  }
 
- class Solution {
+ 
     func hasCycle(_ head: ListNode?) -> Bool {
          var slow = head  
          var fast = head 
@@ -24,5 +24,16 @@ public class ListNode {
 
         return false  
     }
-}
+
+    
+var list = ListNode(2)
+list.next = ListNode(3)
+let four = ListNode(4)
+list.next!.next = four
+list.next!.next!.next = ListNode(5)
+list.next!.next!.next!.next = ListNode(6)
+list.next!.next!.next!.next!.next = four
+
+var result = hasCycle(list)
+print(result)
 
