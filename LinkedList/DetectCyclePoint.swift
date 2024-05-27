@@ -7,3 +7,27 @@ public class ListNode {
         self.next = nil
     }
  }
+
+func detectCyclePoint(_ head: ListNode?)  {
+   
+    var slow = head
+    var fast = head
+
+    while fast != nil && fast!.next != nil {
+        slow = slow!.next
+        fast = fast!.next!.next
+
+        if slow === fast {
+          
+          slow = head
+
+         while  slow!.val != fast!.val {
+            slow = slow!.next
+            fast = fast!.next
+         }
+        return slow
+           
+        }
+    }
+  return nil
+}
