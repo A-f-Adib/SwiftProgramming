@@ -8,7 +8,7 @@ public class ListNode {
     }
  }
 
-func detectCyclePoint(_ head: ListNode?)  {
+func detectCyclePoint(_ head: ListNode?) -> ListNode?  {
    
     var slow = head
     var fast = head
@@ -31,3 +31,13 @@ func detectCyclePoint(_ head: ListNode?)  {
     }
   return nil
 }
+
+var list = ListNode(2)
+list.next = ListNode(3)
+let four = ListNode(4)
+list.next!.next = four
+list.next!.next!.next = ListNode(5)
+list.next!.next!.next!.next = ListNode(6)
+list.next!.next!.next!.next!.next = four
+
+print(detectCyclePoint(list)!.val)
