@@ -17,6 +17,14 @@ func addTwoNum(_ num1: ListNode?, _ num2: ListNode?) -> ListNode? {
             carry = carry + l2!.val
             l2 = l2!.next
         }
+
+        result!.next = ListNode(carry % 10)
+        carry = carry / 10
+        result = result!.next
+    }
+
+    if carry > 0 {
+        result!.next = ListNode(carry)
     }
 
     return head!.next
