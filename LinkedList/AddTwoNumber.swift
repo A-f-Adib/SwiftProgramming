@@ -42,11 +42,7 @@ public class ListNode {
 
  //InPut: 
 
- let num1 = ListNode(7)
- num1.next = ListNode(5)
- num1.next!.next = ListNode(9)
- num1.next!.next!.next = ListNode(4)
- num1.next!.next!.next!.next = ListNode(6)
+ 
 
  let num2 = ListNode(8)
  num2.next = ListNode(4)
