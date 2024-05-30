@@ -52,9 +52,4 @@ public class ListNode {
  num2.next = ListNode(4)
 
  //OutPut:
- let head = addTwoNum(num1, num2)
- var curr = head
- while curr != nil {
-    print(curr!.val)
-    curr = curr!.next
- }
+ 
