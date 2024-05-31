@@ -9,17 +9,16 @@
     	 self.random = nil
     }
  }
-
-
-class Solution {
-    func copyRandomList(_ head: Node?) -> Node? {
+ 
+   func copyRandomList(_ head: Node?) -> Node? {
         
         if head == nil {
             return head
         }
         
         var curr = head
-
+        
+    //step-1: make a new list copy inside the list
         while let val = curr?.val {
             let newNode = Node(val)
             newNode.next = curr?.next
@@ -27,6 +26,7 @@ class Solution {
             curr = newNode.next
         }
 
+    //step-2: pointing the random nodes 
         curr = head
         while curr != nil {
                 curr?.next?.random = curr?.random?.next
@@ -34,6 +34,7 @@ class Solution {
             
         }
 
+    // step-3: seperate two lists
         curr = head
         let newHead : Node? = head?.next
         var newCurr = newHead
@@ -48,4 +49,21 @@ class Solution {
 
         return newHead
     }
+
+//Input: 
+var list = Node( 1)
+list.next = Node( 2)
+list.random = list.next!.next
+list.next!.next = Node(3)
+list.next!.random = list.next!.next!.next
+list.next!.next!.next = Node( 4)
+
+//OutPut:
+let result = copyRandomList( list)
+var curr = result
+while curr != nil  {
+    print(curr!.val)
+    curr = curr!.next
+    // curr = curr!.random
+    // print(curr!.val)
 }
