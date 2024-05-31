@@ -14,34 +14,35 @@
 class Solution {
     func copyRandomList(_ head: Node?) -> Node? {
         
-
+        if head == nil {
+            return head
+        }
+        
         var curr = head
-        var newNode : Node?
 
-        while curr != nil {
-            newNode = curr.val
-            newNode.next = curr.next
-            curr.next = newNode
+        while let val = curr?.val {
+            let newNode = Node(val)
+            newNode.next = curr?.next
+            curr?.next = newNode
             curr = newNode.next
         }
 
         curr = head
         while curr != nil {
-            if curr.random != nil {
-                curr.next.random = curr.random.next
-                curr = curr.next.next
-            }
+                curr?.next?.random = curr?.random?.next
+                curr = curr?.next?.next
+            
         }
 
         curr = head
-        var newHead : Node? = head.next
+        let newHead : Node? = head?.next
         var newCurr = newHead
         while curr != nil {
-            curr.next = newCurr!.next
-            curr = curr.next
+            curr?.next = newCurr?.next
+            curr = curr?.next
              if curr != nil {
-                newCurr.next = curr.next
-                newCurr = newCurr.next
+                newCurr?.next = curr?.next
+                newCurr = newCurr?.next
              }
         }
 
