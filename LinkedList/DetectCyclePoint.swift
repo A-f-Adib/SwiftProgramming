@@ -32,6 +32,8 @@ func detectCyclePoint(_ head: ListNode?) -> ListNode?  {
   return nil
 }
 
+
+//input:
 var list = ListNode(2)
 list.next = ListNode(3)
 let four = ListNode(4)
@@ -40,4 +42,5 @@ list.next!.next!.next = ListNode(5)
 list.next!.next!.next!.next = ListNode(6)
 list.next!.next!.next!.next!.next = four
 
+//output:
 print(detectCyclePoint(list)!.val)
