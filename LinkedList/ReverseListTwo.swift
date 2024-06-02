@@ -16,31 +16,6 @@
          if head == nil {
             return head
         }
-        
-       
-        let i = left
-        let j = right
-       
-        var curr = head
-        var curr2 = curr?.next
-
-        while curr?.val != i && curr2?.val != j {
-          curr = curr?.next
-          curr2 = curr2?.next
-
-          if curr?.val == i {
-          curr?.val = j
-        } 
-        if curr2?.val == j {
-          curr2?.val = i
-        } 
-        }
       
-
-        curr = head
-        return curr
-
-
-        
     }
 
