@@ -44,16 +44,3 @@
         
     }
 
-var list = ListNode(2)
-list.next = ListNode(3)
-let four = ListNode(4)
-list.next!.next = four
-list.next!.next!.next = ListNode(5)
-list.next!.next!.next!.next = ListNode(6)
-
-let result = reverseBetween(list, 3, 5)
-var curr = result
-while curr != nil  {
-    print(curr!.val)
-    curr = curr!.next
-}
