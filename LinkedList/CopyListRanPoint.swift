@@ -59,11 +59,3 @@ list.next!.random = list.next!.next!.next
 list.next!.next!.next = Node( 4)
 
 //OutPut:
-let result = copyRandomList( list)
-var curr = result
-while curr != nil  {
-    print(curr!.val)
-    curr = curr!.next
-    // curr = curr!.random
-    // print(curr!.val)
-}
