@@ -51,12 +51,6 @@
     }
 
 //Input: 
-var list = Node( 1)
-list.next = Node( 2)
-list.random = list.next!.next
-list.next!.next = Node(3)
-list.next!.random = list.next!.next!.next
-list.next!.next!.next = Node( 4)
 
 //OutPut:
 let result = copyRandomList( list)
