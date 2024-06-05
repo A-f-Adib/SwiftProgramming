@@ -22,6 +22,10 @@ func reverseBetween(_ head: ListNode?, _ left: Int, _ right: Int) -> ListNode? {
     leftPrev = leftPrev.next
     curr = curr.next
  }
+   
+   var subListHead = curr
+    var preNode : ListNode? = nil
+    
 
 
       
