@@ -27,5 +27,17 @@ func reverseBetween(_ head: ListNode?, _ left: Int, _ right: Int) -> ListNode? {
             l += 1
         }
       
+       var rightPointer: ListNode?
+        var lastPointer: ListNode? = nextPointer
+        while ( l <= right) {
+            rightPointer = lastPointer
+            lastPointer = lastPointer?.next
+            
+            l += 1
+        }
+        
+        
+        leftPointer?.next = nil 
+        rightPointer?.next = nil
 }
 
