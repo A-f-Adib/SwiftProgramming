@@ -15,6 +15,17 @@ func reverseBetween(_ head: ListNode?, _ left: Int, _ right: Int) -> ListNode? {
         if left  == right {
             return head
         } 
+
+         var head = head
+        var l = 1
+        
+        var leftPointer: ListNode?
+        var nextPointer: ListNode? = head
+        while (l < left) {
+            leftPointer = nextPointer
+            nextPointer = nextPointer?.next
+            l += 1
+        }
       
-    }
+}
 
