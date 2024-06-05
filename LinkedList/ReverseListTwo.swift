@@ -39,5 +39,18 @@ func reverseBetween(_ head: ListNode?, _ left: Int, _ right: Int) -> ListNode? {
         
         leftPointer?.next = nil 
         rightPointer?.next = nil
+
+
+      // reverse list
+        var prev: ListNode? = nil
+        var next: ListNode? = nextPointer
+        
+        while (next != nil) {
+            let forward = next?.next
+            next?.next = prev
+            prev = next
+            next = forward
+        }
+          
 }
 
