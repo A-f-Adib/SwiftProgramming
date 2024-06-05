@@ -51,6 +51,16 @@ func reverseBetween(_ head: ListNode?, _ left: Int, _ right: Int) -> ListNode? {
             prev = next
             next = forward
         }
+
+          if left == 1 {
+            head = prev
+            nextPointer?.next = lastPointer
+        } else {
+            leftPointer?.next = prev
+            nextPointer?.next = lastPointer
+        }
+        
+        return head
           
 }
 
