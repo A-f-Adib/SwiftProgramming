@@ -26,17 +26,7 @@ func reverseBetween(_ head: ListNode?, _ left: Int, _ right: Int) -> ListNode? {
    let subListHead = curr
     var preNode : ListNode? = nil
 
-    for _ in 0...right - left {
-      let nextNode = curr?.next
-      curr?.next = preNode
-      preNode = curr
-      curr = nextNode
-    }
-    leftPrev?.next = preNode
-    subListHead?.next = curr
-
-    return dummyNode?.next
-      
+    
           
 }
 
