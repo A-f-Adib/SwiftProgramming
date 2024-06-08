@@ -33,6 +33,7 @@ let num1 = ListNode(7)
  num1.next!.next!.next = ListNode(4)
  num1.next!.next!.next!.next = ListNode(6)
 
+//output:
 let head = removeNthFromEnd(num1, 3)
  var curr = head
  while curr != nil {
