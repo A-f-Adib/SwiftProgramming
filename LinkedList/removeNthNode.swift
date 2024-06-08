@@ -26,6 +26,7 @@ func removeNthFromEnd(_ head: ListNode?, _ n: Int) -> ListNode? {
         return dummy?.next
 }
 
+//input:
 let num1 = ListNode(7)
  num1.next = ListNode(5)
  num1.next!.next = ListNode(9)
