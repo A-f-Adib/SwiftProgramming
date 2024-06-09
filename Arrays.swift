@@ -276,13 +276,21 @@ func internalFunc(_ arr : [Character], _ start : Int, _ end : Int, _ removed : B
     guard n > 0 else {
       return
     }
-	
+
 	 guard m > 0 else {
       for (index, value) in nums2.enumerated() {
           nums1[index] = value
       }
       return
     }
+
+	var nums2Counter = n - 1
+    var zeroPosition = m + n - 1
+    var nums1Counter = m - 1
+  
+    while nums2Counter >= 0  && nums1Counter >= 0{
+      let num2 = nums2[nums2Counter]
+      let num1 = nums1[nums1Counter]
  }
 //------------------------------------------------------------------------------------
 
