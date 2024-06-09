@@ -264,3 +264,8 @@ func internalFunc(_ arr : [Character], _ start : Int, _ end : Int, _ removed : B
 }
 //  print(PalindromicString2("abca"))
 //------------------------------------------------------------------------------------
+
+//Q12- marge sorted array
+    func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
+         nums1 = (nums1.dropLast(n) + nums2).sorted()
+    }
