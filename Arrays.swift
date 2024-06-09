@@ -297,6 +297,12 @@ func internalFunc(_ arr : [Character], _ start : Int, _ end : Int, _ removed : B
         zeroPosition -= 1
         nums2Counter -= 1
       } else {
+		 nums1[zeroPosition] = num1
+        nums1[nums1Counter] = 0
+        nums1Counter -= 1
+        zeroPosition -= 1
+      }
+    }
  }
 //------------------------------------------------------------------------------------
 
