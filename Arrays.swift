@@ -291,6 +291,12 @@ func internalFunc(_ arr : [Character], _ start : Int, _ end : Int, _ removed : B
     while nums2Counter >= 0  && nums1Counter >= 0{
       let num2 = nums2[nums2Counter]
       let num1 = nums1[nums1Counter]
+
+	   if num2 >= num1 {
+        nums1[zeroPosition] = num2
+        zeroPosition -= 1
+        nums2Counter -= 1
+      } else {
  }
 //------------------------------------------------------------------------------------
 
