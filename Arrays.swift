@@ -303,6 +303,13 @@ func internalFunc(_ arr : [Character], _ start : Int, _ end : Int, _ removed : B
         zeroPosition -= 1
       }
     }
+
+	 while nums2Counter >= 0 {
+      let num2 = nums2[nums2Counter]
+      nums1[zeroPosition] = num2
+      nums2Counter -= 1
+      zeroPosition -= 1
+    }
  }
 //------------------------------------------------------------------------------------
 
