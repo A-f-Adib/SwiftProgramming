@@ -269,3 +269,12 @@ func internalFunc(_ arr : [Character], _ start : Int, _ end : Int, _ removed : B
     func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
          nums1 = (nums1.dropLast(n) + nums2).sorted()
     }
+
+//sol-2:
+ func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
+    guard n > 0 else {
+      return
+    }
+ }
+//------------------------------------------------------------------------------------
+
