@@ -311,5 +311,12 @@ func internalFunc(_ arr : [Character], _ start : Int, _ end : Int, _ removed : B
       zeroPosition -= 1
     }
  }
+
+ //sol-3:
+   func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
+        var countOfNums1 = m
+        var countOfNums2 = n
+		
+   }
 //------------------------------------------------------------------------------------
 
