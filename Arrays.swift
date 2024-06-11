@@ -311,11 +311,7 @@ func internalFunc(_ arr : [Character], _ start : Int, _ end : Int, _ removed : B
       zeroPosition -= 1
     }
  }
-
-		 var leftPointer = m - 1
-        var rightPointer = n - 1
-
-        var mergePointer = m + n - 1
+     var mergePointer = m + n - 1
 
 		 while leftPointer >= 0 || rightPointer >= 0 {
 
