@@ -311,11 +311,5 @@ func internalFunc(_ arr : [Character], _ start : Int, _ end : Int, _ removed : B
       zeroPosition -= 1
     }
  }
-  				nums1[mergePointer] = nums2[rightPointer]
-                rightPointer -= 1
-            }
-            mergePointer -= 1
-        }
-   }
 //------------------------------------------------------------------------------------
 
