@@ -319,6 +319,11 @@ func internalFunc(_ arr : [Character], _ start : Int, _ end : Int, _ removed : B
         var lastA = m - 1
         var lastB = n - 1
         var curr = nums1.count - 1
+
+		 while lastA >= 0, lastB >= 0 {
+            if nums1[lastA] >= nums2[lastB] {
+                nums1[curr] = nums1[lastA]
+                lastA -= 1
  }
 //------------------------------------------------------------------------------------
 
