@@ -330,6 +330,12 @@ func internalFunc(_ arr : [Character], _ start : Int, _ end : Int, _ removed : B
             }
             curr -= 1
         }
+
+		 while lastB >= 0 {
+            nums1[curr] = nums2[lastB]
+            lastB -= 1
+            curr -= 1
+        }
  }
 //------------------------------------------------------------------------------------
 
