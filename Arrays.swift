@@ -314,8 +314,6 @@ func internalFunc(_ arr : [Character], _ start : Int, _ end : Int, _ removed : B
     }
  }
 
- func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
-        var lastA = m - 1
         var lastB = n - 1
         var curr = nums1.count - 1
 
