@@ -314,9 +314,6 @@ func internalFunc(_ arr : [Character], _ start : Int, _ end : Int, _ removed : B
     }
  }
 
-                nums1[curr] = nums1[lastA]
-                lastA -= 1
-				   } else {
                 nums1[curr] = nums2[lastB]
                 lastB -= 1
             }
