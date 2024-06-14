@@ -1,3 +1,4 @@
+ 
 class Node {
   var data : Int
   var next : Node?
@@ -17,7 +18,7 @@ class Stack {
 
     func push(_ data : Int) {
         let temp = head
-        head = Node(data)
+        head = Node(data: data)
         head?.next = temp
         length += 1
     }
@@ -37,4 +38,21 @@ class Stack {
     func isEmpty() -> Bool {
         return length <= 0
     }
+}
+
+// Input:
+var stack = Stack()
+
+stack.push(10)
+stack.push(8)
+stack.push(6)
+stack.push(4)
+stack.push(2)
+
+//OutPut:
+ print("Top Element: \(stack.peek()!.data)")
+ 
+while !stack.isEmpty() {
+    print(stack.pop()!.data)
+   
 }
