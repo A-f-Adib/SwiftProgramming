@@ -318,10 +318,12 @@ func internalFunc(_ arr : [Character], _ start : Int, _ end : Int, _ removed : B
 
 func isSubsequence(_ s: String, _ t: String) -> Bool {
 
-	  if (t.count  < s.count) {return false}
+	if (t.count  < s.count) {return false}
 
 	var stak = s
     for item in t {
+		 if item == stak.first {
+        stak.removeFirst()
 }
 
 //------------------------------------------------------------------------------------
