@@ -323,11 +323,11 @@ func isSubsequence(_ s: String, _ t: String) -> Bool {
 	var stak = s
     for item in t {
 		 if item == stak.first {
-        stak.removeFirst()
+         stak.removeFirst()
 		 if stak.count == 0 {return true }
       }
     }
-	
+	 return stak.count == 0 ? true : false 
 }
 
 //------------------------------------------------------------------------------------
