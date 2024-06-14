@@ -316,5 +316,9 @@ func internalFunc(_ arr : [Character], _ start : Int, _ end : Int, _ removed : B
 //------------------------------------------------------------------------------------
 //Q-13: Is Subsequence
 
+func isSubsequence(_ s: String, _ t: String) -> Bool {
+
+	
+}
 
 //------------------------------------------------------------------------------------
