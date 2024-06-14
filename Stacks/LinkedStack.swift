@@ -21,4 +21,20 @@ class Stack {
         head?.next = temp
         length += 1
     }
+
+    func pop() -> Node? {
+        let temp = head
+        head = head?.next
+        length -= 1
+        length = length < 0 ? 0 : length
+        return temp
+    }
+
+    func peek() -> Node? {
+        return head
+    }
+
+    func isEmpty() -> Bool {
+        return length <= 0
+    }
 }
