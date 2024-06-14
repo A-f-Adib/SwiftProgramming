@@ -320,7 +320,8 @@ func isSubsequence(_ s: String, _ t: String) -> Bool {
 
 	  if (t.count  < s.count) {return false}
 
-	  
+	var stak = s
+    for item in t {
 }
 
 //------------------------------------------------------------------------------------
