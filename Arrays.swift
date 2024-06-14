@@ -318,7 +318,9 @@ func internalFunc(_ arr : [Character], _ start : Int, _ end : Int, _ removed : B
 
 func isSubsequence(_ s: String, _ t: String) -> Bool {
 
-	
+	  if (t.count  < s.count) {return false}
+
+	  
 }
 
 //------------------------------------------------------------------------------------
