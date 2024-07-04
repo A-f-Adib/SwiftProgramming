@@ -30,25 +30,67 @@ class MinStack {
     }
 
     func top() -> Node? {
-        return stack.isEmpty ? nil : stack.peek()
+        return stack.isEmpty() ? nil : stack.peek()
     }
 
     func getMin() -> Node? {
-        return minStack.isEmpty ? nil : minStack.peek()
+        return minStack.isEmpty() ? nil : minStack.peek()
     }
 
+}
+
+//Main Stack
+class Node {
+  var data : Int
+  var next : Node?
+
+  init(data: Int) {
+    self.data = data
+  }
+}
+
+class Stack {
+    private var head : Node?
+    private var length : Int
+
+    init() {
+        self.length = 0
+    }
+
+    func push(_ data : Int) {
+        let temp = head
+        head = Node(data: data)
+        head?.next = temp
+        length += 1
+    }
+
+    func pop() -> Node? {
+        let temp = head
+        head = head?.next
+        length -= 1
+        length = length < 0 ? 0 : length
+        return temp
+    }
+
+    func peek() -> Node? {
+        return head
+    }
+
+    func isEmpty() -> Bool {
+        return length <= 0
+    }
 }
 
 //OutPut:
 
 var stack = MinStack()
 
-stack.push(19)
-stack.push(16)
-stack.push(18)
-stack.push(21)
-stack.push(15)
-stack.push(20)
+stack.push(4)
+stack.push(8)
+stack.push(5)
+stack.push(2)
+stack.push(6)
+stack.push(3)
 
-print(stack.top()!.data)
-print(stack.getMin()!.data)
+print("Top element: \(stack.top()!.data)")
+print("Min element: \(stack.getMin()!.data)")
