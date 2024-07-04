@@ -1,4 +1,4 @@
-class Solution {
+
 
     func isValid(_ s: String) -> Bool {
         guard s.count % 2 == 0 else {
@@ -25,5 +25,13 @@ class Solution {
 
         return stack.isEmpty
     }
-}
+
+//Output:
+
+print("() - is valid? => ", isValid("()"))
+print("(){}[] - is valid? => ", isValid("(){}[]"))
+print("({}] - is valid? => ", isValid("({}]"))
+print("({[]}) - is valid? => ", isValid("({[]})"))
+print("({) - is valid? => ", isValid("({)"))
+
 
