@@ -1,23 +1,29 @@
 class Solution {
-    func isValid(_ s: String) -> Bool {
-        guard s.count % 2 == 0 else { return false }
-        var stack: [Character] = []
 
-        for item in s {
-            switch item {
-            case "(":
+    func isValid(_ s: String) -> Bool {
+        guard s.count % 2 == 0 else {
+            return false
+        }
+
+        var stack : [Character] = []
+
+        for char in s  {
+            if char == "(" {
                 stack.append(")")
-            case "[":
-                stack.append("]")
-            case "{":
+            }
+            else if char == "{" {
                 stack.append("}")
-            default:
-                if stack.isEmpty || stack.removeLast() != item {
-                    return false
-                }
+            }
+             else if char == "[" {
+                stack.append("]")
+            }
+
+            else if stack.isEmpty || stack.removeLast() != char {
+                return false
             }
         }
 
         return stack.isEmpty
     }
 }
+
