@@ -17,3 +17,11 @@ func simplifyPath(_ str : String) -> String {
 
     return "/" + stack.joined(separator: "/")
 }
+
+// test cases: 
+
+let input = ["/home/", "/home//foo/", "/home/user/Documents/../Pictures", "/../", "/.../a/../b/c/../d/./"]
+
+for i in input {
+    print(simplifyPath(i))
+}
