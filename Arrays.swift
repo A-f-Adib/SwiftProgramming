@@ -189,7 +189,7 @@ func fizzBuzz(_ num: Int) -> [String] {
     return result
     }
 
-// print(fizzBuzz(15))
+print(fizzBuzz(15))
 //-----------------------------------------------------------------------------------------------
 
 //Q9. Palindromic string
@@ -266,7 +266,7 @@ func internalFunc(_ arr : [Character], _ start : Int, _ end : Int, _ removed : B
 //------------------------------------------------------------------------------------
 
 //Q12- marge sorted array
-    func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
+    func mergee(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
          nums1 = (nums1.dropLast(n) + nums2).sorted()
     }
 
@@ -329,3 +329,4 @@ func isSubsequence(_ s: String, _ t: String) -> Bool {
     }
 	 return stak.count == 0 ? true : false 
 }
+//--------------------------------------------------------------------------------------
