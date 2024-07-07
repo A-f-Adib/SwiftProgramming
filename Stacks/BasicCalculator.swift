@@ -1,4 +1,5 @@
- private func calculate(_ s: String, _ ind: String.Index) -> (result: Int, nextInd: String.Index) {
+ 
+   func calculate(_ s: String, _ ind: String.Index) -> (result: Int, nextInd: String.Index) {
         var ind = ind
         var queue = [(Int, (Int, Int) -> Int)]()
         var curNum = 0
@@ -23,4 +24,23 @@
                 break
             case "+":
                 queue.append((calc(), +))
- }
+                 case "-":
+                queue.append((calc(), -))
+            case "*":
+                queue.append((curNum, *))
+                curNum = 0
+            case "/":
+                queue.append((curNum, /))
+                curNum = 0
+            default:
+                curNum = curNum * 10 + s[ind].wholeNumberValue!
+            }
+            ind = s.index(after: ind)
+        }
+        return (calc(), ind)
+    }
+
+    func calculate(_ s: String) -> Int {
+        calculate(s, s.startIndex).result
+    }
+ 
