@@ -9,4 +9,16 @@
                 count -= 1
             }
             stack.append(number)
+        } 
+        
+        while count > 0 {
+            stack.removeLast()
+            count -= 1  
         }
+
+        while stack.first == "0" {
+            stack.removeFirst()
+        }
+
+        return stack.isEmpty ? "0" : String(stack)
+}
