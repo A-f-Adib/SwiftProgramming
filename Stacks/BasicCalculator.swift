@@ -11,4 +11,16 @@
             }
             return result
         }
+
+         while ind < s.endIndex {
+            switch s[ind] {
+            case "(":
+                (curNum, ind) = calculate(s, s.index(after: ind))
+                continue
+            case ")":
+                return (calc(), s.index(after: ind))
+            case " ":
+                break
+            case "+":
+                queue.append((calc(), +))
  }
