@@ -1,3 +1,4 @@
+
 func maxProfit(_ prices:[Int]) -> Int {
     var buyingPrice : Int = prices[0]
 
@@ -14,3 +15,10 @@ func maxProfit(_ prices:[Int]) -> Int {
     } 
     return profit
 }
+
+//Test Cases: 
+//Case-1:
+print("Max profit: \(maxProfit([3,1,4,2,6,5]))")
+//Case-2:
+print("Max profit: \(maxProfit([7,6,4,3,1]))")
+
