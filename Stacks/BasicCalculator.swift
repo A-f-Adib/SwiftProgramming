@@ -45,6 +45,7 @@
     }
 
 //--------------------------------------------------------------------------------------------
+
 //Sol-2:
 
 func calculate(_ s: String) -> Int {
@@ -60,5 +61,18 @@ func calculate(_ s: String) -> Int {
             partialResult += number * sign
             number = 0
             sign = char == "-" ? -1 : 1
+        } else if char == "(" {
+            stack.append(partialResult)
+            stack.append(sign)
+            partialResult = 0
+            sign = 1
+        } else if char == ")" {
+            partialResult += number * sign
+            partialResult *= stack.popLast()! // sign
+            partialResult += stack.popLast()! // number
+            number = 0
         }
+    }
+    return partialResult + number * sign
+}
  
