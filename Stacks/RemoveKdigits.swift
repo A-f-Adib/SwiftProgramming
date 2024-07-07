@@ -22,3 +22,12 @@
 
         return stack.isEmpty ? "0" : String(stack)
 }
+
+//OutPut:
+
+let input = [["12345", "1"], ["10200", "1"], ["0415302", "2"]]
+
+for i in input {
+    print(removeKdigits(i[0], Int(i[1])!))
+    
+}
