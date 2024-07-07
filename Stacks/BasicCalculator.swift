@@ -43,4 +43,22 @@
     func calculate(_ s: String) -> Int {
         calculate(s, s.startIndex).result
     }
+
+//--------------------------------------------------------------------------------------------
+//Sol-2:
+
+func calculate(_ s: String) -> Int {
+    var stack = [Int]()
+    var number = 0
+    var partialResult = 0
+    var sign = 1
+    
+    for char in s {
+        if char.isNumber {
+            number = number * 10 + char.wholeNumberValue!
+        } else if char == "+" || char == "-" {
+            partialResult += number * sign
+            number = 0
+            sign = char == "-" ? -1 : 1
+        }
  
