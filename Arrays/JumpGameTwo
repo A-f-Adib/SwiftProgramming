@@ -1,0 +1,22 @@
+func canJumpTwo(_ nums: [Int]) -> Int {
+        
+         var finalPosition = nums.count - 1
+         var Count = 0
+
+    for index in stride(from: nums.count - 2, through: 0, by: -1) {
+       
+        
+         if index + nums[index] >= finalPosition {
+
+            finalPosition = index
+            Count += 1
+         }
+       
+       
+    }
+     return Count
+}
+
+//Test cases:
+print(canJumpTwo([1,2,3,0,5]))
+print(canJumpTwo([3,2,1,0,5]))
