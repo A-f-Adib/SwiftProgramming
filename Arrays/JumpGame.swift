@@ -1,15 +1,22 @@
   
-  func canJump(_ nums: [Int]) -> Bool {
+func canJump(_ nums: [Int]) -> Bool {
+        
+         var finalPosition = nums.count - 1
+      
 
-        var reach = 0
-        var i = 0
+    for index in stride(from: nums.count - 2, through: 0, by: -1) {
+       
+        
+         if index + nums[index] >= finalPosition {
 
-        while i <= reach {
-            reach = max(reach, i + nums[i])
-            i += 1
-            if reach >= nums.count - 1 { return true }
-        }
+            finalPosition = index
+         }
+       
+       
+    }
+     return finalPosition == 0
+}
 
-        return false
-    
-  }
+//Test cases:
+print(canJump([1,2,3,0,5]))
+print(canJump([3,2,1,0,5]))
