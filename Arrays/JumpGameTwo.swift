@@ -29,3 +29,9 @@ func canJumpTwo(_ nums: [Int]) -> Int {
 //Test cases:
 print(canJumpTwo([1,2,3,0,5]))
 print(canJumpTwo([3,2,1,0,5]))
+
+/***
+step-1: first find the maximum coverage of first index
+step-2: then find the maximum coverage of last coverage and count total jumps
+step-3: return total jumps when the coverage is greate or equal then destination index.
+***/
