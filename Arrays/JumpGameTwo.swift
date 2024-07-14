@@ -1,17 +1,16 @@
-func canJumpTwo(_ nums: [Int]) -> Int {
+ 
+ func canJumpTwo(_ nums: [Int]) -> Int {
    
    var totalJumps = 0
    var coverage = 0
    var lastJump = 0
    let destination = nums.count - 1
 
-   if nums.count == 1 {
-    return 0
-   }
+   if nums.count == 1 { return 0 }
 
    for i in 0..<nums.count {
 
-        coverage = max(coverage, i + nums[i])
+    coverage = max(coverage, i + nums[i])
 
         if i == lastJump {
             lastJump = coverage
@@ -22,7 +21,6 @@ func canJumpTwo(_ nums: [Int]) -> Int {
             }
         }
    }
-
    return totalJumps
 }
 
