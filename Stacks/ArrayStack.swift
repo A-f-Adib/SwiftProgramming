@@ -1,3 +1,4 @@
+
 class ArrayStack {
 
     private var stack = [Int]()
@@ -29,9 +30,9 @@ stack.push(2)
 stack.push(1)
 
 //OutPut:
- print("Top Element: \(stack.peek())")
+ 
+print("Top Element: \(stack.peek())")
  
 while !stack.isEmpty() {
-    print(stack.pop())
-   
+    print(stack.pop()) 
 }
