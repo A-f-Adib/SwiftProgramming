@@ -33,4 +33,27 @@ class LinkedQueue {
         head = head!.next
         return node
     }
+
+    func peek() -> Node? {
+        return head
+    }
+
+    var isEmpty : Bool {
+        return length == 0
+    }
 }
+
+// test cases:
+
+var queue = LinkedQueue()
+
+for i in 0...10 {
+    queue.enqueue(i)
+}
+
+print("peek element: \(queue.peek()!.data)")
+
+while !queue.isEmpty {
+    print("\(queue.dequeue()!.data)")
+}
+
