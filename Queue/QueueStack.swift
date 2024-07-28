@@ -27,7 +27,7 @@ class Stack<T> {
         head = node
         head!.next = temp
     }
-    
+
    func pop() -> T? {
         count -= 1
         let temp = head
@@ -41,4 +41,16 @@ class Stack<T> {
     func peek() -> T {
         return head!.data
     }
+}
+
+//test cases:
+
+var queue = QueueStack<Int>()
+for i in 0...10 {
+  queue.enqueue(i)
+
+}
+
+while !queue.isEmpty {
+    print(queue.dequeue()!)
 }
