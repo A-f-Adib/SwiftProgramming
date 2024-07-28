@@ -1,4 +1,32 @@
 
+class QueueStack<T> {
+    private var stack1 = Stack<T>()
+    private var stack2 = Stack<T>()
+
+    var isEmpty : Bool {
+        return stack1.isEmpty
+    }
+
+    func enqueue (_ data: T) {
+        while !stack1.isEmpty {
+            stack2.push(stack1.pop()!)
+        }
+
+        stack1.push(data)
+
+        while !stack2.isEmpty {
+            stack1.push(stack2.pop()!)
+        }
+    }
+
+    func dequeue() -> T? {
+        return stack1.pop() ?? nil
+    }
+
+}
+
+
+
 class Node<T> {
     var  data : T
     var next : Node?
