@@ -42,3 +42,16 @@ class Stack<T> {
         return head!.data
     }
 }
+
+
+//test cases:
+
+var queue = QueueStackTwo<Int>()
+for i in 0...10 {
+  queue.enqueue(i)
+
+}
+
+while !queue.isEmpty {
+    print(queue.dequeue()!)
+}
