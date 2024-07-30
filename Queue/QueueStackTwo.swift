@@ -23,3 +23,22 @@ class Stack<T> {
             head = node
             return
         }
+               let temp = head
+        head = node
+        head!.next = temp
+    }
+
+   func pop() -> T? {
+        count -= 1
+        let temp = head
+       if head != nil {
+         head = head!.next
+       }
+
+       return temp!.data
+    }
+
+    func peek() -> T {
+        return head!.data
+    }
+}
