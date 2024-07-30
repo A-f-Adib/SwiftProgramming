@@ -1,3 +1,4 @@
+
 import Foundation
 
 func getUniqueEmail(_ list: [String]) -> Int {
@@ -22,3 +23,7 @@ func getUniqueEmail(_ list: [String]) -> Int {
     print(uniqueEmails)
     return uniqueEmails.count
 }
+
+//test cases:
+getUniqueEmail(["a.b.c@gmail.com"])
+getUniqueEmail(["a.bcdef+ghi@gmail.com"])
