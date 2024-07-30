@@ -27,3 +27,7 @@ func getUniqueEmail(_ list: [String]) -> Int {
 //test cases:
 getUniqueEmail(["a.b.c@gmail.com"])
 getUniqueEmail(["a.bcdef+ghi@gmail.com"])
+getUniqueEmail(["1234ab.c@gmail.com"])
+getUniqueEmail(["abc.d+ghi+jkl@gmail.com"])
+getUniqueEmail(["a.b.c245@gmail.com"])
+getUniqueEmail(["a234b.c.d.e.f.ghi+@gmail.com"])
