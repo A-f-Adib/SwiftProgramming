@@ -1,3 +1,4 @@
+ 
  func strStr(_ haystack: String, _ needle: String) -> Int {
         var n = Array(needle)
         var h = Array(haystack)
@@ -22,5 +23,17 @@
                 r += 1
                 j += 1
             }
+            else{
+                res = -1
+                 break
+            }
+        }
 
- }
+        if res != -1{
+           return res
+        } 
+    }
+            l += 1
+    }
+        return res
+}
