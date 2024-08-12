@@ -37,3 +37,19 @@
     }
         return res
 }
+
+//----------------------------------------------------------------------------------------------------------
+//Sol-2:
+
+func strStr2(_ haystack: String, _ needle: String) -> Int {
+
+    if let range: Range<String.Index> = haystack.range(of: needle) {
+
+        let index: Int = haystack.distance(from: haystack.startIndex, to: range.lowerBound)
+           
+        return index
+    }
+
+    return -1
+    
+}
