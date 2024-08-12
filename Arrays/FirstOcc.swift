@@ -12,4 +12,15 @@
                 res = l
                 r = l + 1
                 var j = 1
+
+        while j < n.count{
+            if r > h.count - 1
+            {
+                return -1
+            }
+            if h[r] == n[j] {
+                r += 1
+                j += 1
+            }
+
  }
