@@ -1,4 +1,28 @@
 
+func romanToInt(_ s: String) -> Int {
+    let arr = Array(s).map { convertToInt($0) }
+    
+    var result = 0
+    var i = 1
+    while arr.count >= i {
+        
+        if arr.count == i {
+            result += arr[arr.count-1]
+            break
+        }
+        
+        if arr[i] > arr[i-1] {
+            result += (arr[i] - arr[i-1])
+            i += 2
+        } else {
+            result += arr[i-1]
+            i += 1
+        }
+    }
+    
+    return result
+}
+
 func convertToInt(_ symbol: Character) -> Int {
     switch symbol {
     case "I":
