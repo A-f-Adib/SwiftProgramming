@@ -15,3 +15,19 @@ func hIndex(_ citations: [Int]) -> Int {
 
         return hIndex
 }
+
+//Sol-2:
+
+ func hIndex(_ citations: [Int]) -> Int {
+    
+        let hIn = citations.sorted(by: >)
+        var h = 0
+        for (i, cit) in hIn.enumerated() {
+            if i + 1 <= cit {
+                h = i + 1
+            } else {
+                return h
+            }
+        }
+        return h
+}
