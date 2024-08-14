@@ -4,4 +4,14 @@ func hIndex(_ citations: [Int]) -> Int {
 
         var i = 0 
         var hIndex = 0 
+
+    while i < sortedCitations.count {
+
+        if sortedCitations[i] > i {
+                hIndex = i + 1
+        }
+            i += 1
+        }
+
+        return hIndex
 }
