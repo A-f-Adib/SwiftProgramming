@@ -35,12 +35,7 @@ func hIndex(_ citations: [Int]) -> Int {
 
         return h
 }
-
-//Sol-3:
-
-func hIndex(_ citations: [Int]) -> Int {
-    
-   zip(1..., arr.sorted(by:>)).map{ index, val in            
+  zip(1..., arr.sorted(by:>)).map{ index, val in            
             index>val ? index:0  // filter valid h-indices
         }
         .max()!
