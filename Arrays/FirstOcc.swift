@@ -37,14 +37,3 @@
     }
         return res
 }
-
-    if let range: Range<String.Index> = haystack.range(of: needle) {
-
-        let index: Int = haystack.distance(from: haystack.startIndex, to: range.lowerBound)
-           
-        return index
-    }
-
-    return -1
-    
-}
