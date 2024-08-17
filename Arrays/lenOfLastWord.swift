@@ -14,11 +14,10 @@
         return ans
 }
 
-//sol-2:
- func lengthOfLastWord2(_ s: String) -> Int {
-
-        s.split { $0 == " " }.last?.count ?? 0
-
-}
 
 //test cases:
+
+print(lengthOfLastWord("Hello World"))
+print(lengthOfLastWord("   fly me   to   the moon  "))
+print(lengthOfLastWord("luffy is still joyboy"))
+print(lengthOfLastWord("Seen this question in a real interview before?"))
