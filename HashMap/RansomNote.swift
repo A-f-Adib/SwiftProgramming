@@ -1,18 +1,15 @@
 
- func canConstruct(_ ransomNote: String, _ magazine: String) -> Bool {
-        var magazineCopy = magazine
 
-          for letter in ransomNote {
-            if let index = magazineCopy.firstIndex(of: letter) {
-                magazineCopy.remove(at: index)
+//             if let index = magazineCopy.firstIndex(of: letter) {
+//                 magazineCopy.remove(at: index)
 
-         } else {
-                return false
-            }
-        }
+//          } else {
+//                 return false
+//             }
+//         }
 
-        return true            
- }
+//         return true            
+//  }
 
  //sol-2:
   func canConstruct2(_ ransomNote: String, _ magazine: String) -> Bool {
