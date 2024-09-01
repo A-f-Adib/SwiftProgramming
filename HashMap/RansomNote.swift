@@ -1,8 +1,4 @@
 
-
-//             if let index = magazineCopy.firstIndex(of: letter) {
-//                 magazineCopy.remove(at: index)
-
 //          } else {
 //                 return false
 //             }
