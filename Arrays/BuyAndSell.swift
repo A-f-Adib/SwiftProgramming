@@ -21,4 +21,5 @@ func maxProfit(_ prices:[Int]) -> Int {
 print("Max profit: \(maxProfit([3,1,4,2,6,5]))")
 //Case-2:
 print("Max profit: \(maxProfit([7,6,4,3,1]))")
-
+//Case-3:
+print("Max profit: \(maxProfit([5,3,2,6,1,4,7]))")
