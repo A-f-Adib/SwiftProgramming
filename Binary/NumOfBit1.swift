@@ -14,7 +14,20 @@ func hammingWeight(_ n: Int) -> Int {
 
 }
 
+//Sol-2:
+
+func hammingWeight2(_ n: Int) -> Int {
+        var count = 0
+        var number = n
+
+        while number != 0 {
+            count += number & 1
+            number >>= 1
+        }
+        return count
+}
+
 //Test cases:
 print(hammingWeight(128))
 print(hammingWeight(11))
-print(hammingWeight(127))
+print(hammingWeight2(127))
