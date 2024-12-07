@@ -11,6 +11,29 @@ class Graph {
         self.adjacencyMatrix = Array(repeating: Array(repeating: 0, count: vertices), count: vertices)
     }
     
+    // Add an edge between two vertices
+    func addEdge(from source: Int, to destination: Int, directed: Bool = false) {
+        guard source >= 0 && source < vertexCount && destination >= 0 && destination < vertexCount else {
+            print("Invalid vertices")
+            return
+        }
+        adjacencyMatrix[source][destination] = 1
+        if !directed {
+            adjacencyMatrix[destination][source] = 1
+        }
+    }
+    
+    // Remove an edge between two vertices
+    func removeEdge(from source: Int, to destination: Int, directed: Bool = false) {
+        guard source >= 0 && source < vertexCount && destination >= 0 && destination < vertexCount else {
+            print("Invalid vertices")
+            return
+        }
+        adjacencyMatrix[source][destination] = 0
+        if !directed {
+            adjacencyMatrix[destination][source] = 0
+        }
+    }
     
     // Print the adjacency matrix
     func displayMatrix() {
