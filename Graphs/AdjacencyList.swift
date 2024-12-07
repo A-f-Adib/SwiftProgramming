@@ -39,4 +39,24 @@ class Graph {
         }
     }
     
-   
+    // Display the adjacency list
+    func displayList() {
+        for (vertex, neighbors) in adjacencyList.enumerated() {
+            print("\(vertex): \(neighbors.map { String($0) }.joined(separator: " -> "))")
+        }
+    }
+}
+
+// Example Usage
+let graph = Graph(vertices: 4)
+graph.addEdge(from: 0, to: 1)
+graph.addEdge(from: 0, to: 2)
+graph.addEdge(from: 1, to: 2, directed: true)
+graph.addEdge(from: 2, to: 3)
+
+print("Adjacency List:")
+graph.displayList()
+
+graph.removeEdge(from: 0, to: 2)
+print("\nAfter removing edge (0 -> 2):")
+graph.displayList()
