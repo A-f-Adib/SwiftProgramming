@@ -33,3 +33,48 @@ class LinkedList {
     }
 }
 
+// Graph class using adjacency list
+class Graph {
+    private var adjacencyList: [LinkedList]
+    private var vertexCount: Int
+    
+    // Initialize the graph with the number of vertices
+    init(vertices: Int) {
+        self.vertexCount = vertices
+        self.adjacencyList = Array(repeating: LinkedList(), count: vertices)
+    }
+    
+    // Add an edge
+    func addEdge(from source: Int, to destination: Int, directed: Bool = false) {
+        guard source >= 0 && source < vertexCount && destination >= 0 && destination < vertexCount else {
+            print("Invalid vertices")
+            return
+        }
+        
+        // Add destination to the adjacency list of source
+        adjacencyList[source].addNode(value: destination)
+        
+        // If undirected, add source to the adjacency list of destination
+        if !directed {
+            adjacencyList[destination].addNode(value: source)
+        }
+    }
+    
+    // Display the adjacency list
+    func displayGraph() {
+        for (i, list) in adjacencyList.enumerated() {
+            print("\(i): ", terminator: "")
+            list.displayList()
+        }
+    }
+}
+
+// Example Usage
+let graph = Graph(vertices: 4)
+graph.addEdge(from: 0, to: 1)
+graph.addEdge(from: 0, to: 2)
+graph.addEdge(from: 1, to: 2)
+graph.addEdge(from: 2, to: 3, directed: true)
+
+print("Adjacency List Representation:")
+graph.displayGraph()
