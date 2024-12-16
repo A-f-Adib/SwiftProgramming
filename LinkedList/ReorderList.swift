@@ -1,5 +1,16 @@
 func reorderList(_ head: ListNode?) {
+
+    guard head != nil || head!.next != nil else { return }
         
+        var slowPtr = head
+        var fastPtr = head
+
+        while fastPtr!.next != nil && fastPtr!.next!.next != nil {
+            slowPtr = slowPtr!.next
+            fastPtr = fastPtr!.next!.next
+        }
+
+        var mid = slowPtr
 }
 
 
