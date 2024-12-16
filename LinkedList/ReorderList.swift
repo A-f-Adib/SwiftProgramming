@@ -16,7 +16,7 @@ func reorderList(_ head: ListNode?) {
     //Reverse the second mid
         var curr = slowPtr
         var prev : ListNode?
-        
+
         while curr?.next != nil {
              let next = curr?.next
              curr?.next = prev
@@ -24,6 +24,22 @@ func reorderList(_ head: ListNode?) {
              curr = next
         }
 
+
+    //Merge two list
+     var first = head
+     var second = prev
+
+     while second?.next != nil {
+
+        let temp1 = first?.next
+        let temp2 = second?.next
+
+        first?.next = second
+        second?.next = temp1
+
+        first = temp1
+        second = temp2
+     }
 
 }
 
