@@ -2,6 +2,8 @@ func reorderList(_ head: ListNode?) {
 
     guard head != nil || head!.next != nil else { return }
         
+
+        //Find the mid of the list
         var slowPtr = head
         var fastPtr = head
 
@@ -10,7 +12,19 @@ func reorderList(_ head: ListNode?) {
             fastPtr = fastPtr!.next!.next
         }
 
-        var mid = slowPtr
+
+    //Reverse the second mid
+        var curr = slowPtr
+        var prev : ListNode?
+        
+        while curr?.next != nil {
+             let next = curr?.next
+             curr?.next = prev
+             prev = curr
+             curr = next
+        }
+
+
 }
 
 
