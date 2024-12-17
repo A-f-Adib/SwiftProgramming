@@ -48,7 +48,7 @@
 
 //Sol-2:
 
-func calculate(_ s: String) -> Int {
+func calculator(_ s: String) -> Int {
     var stack = [Int]()
     var number = 0
     var partialResult = 0
