@@ -17,4 +17,23 @@ func findPeakElement(_ arr: [Int]) -> Int {
         while start <= end {
             let mid = start + (end - start) / 2
             
-           
+            // Check if the current element is a peak
+            if (mid == 0 || arr[mid - 1] < arr[mid]) && 
+               (mid == arr.count - 1 || arr[mid] > arr[mid + 1]) {
+                return mid
+            }
+            
+            // Move search space to the side with a potential peak
+            if mid > 0 && arr[mid - 1] < arr[mid] {
+                start = mid + 1
+            } else {
+                end = mid - 1
+            }
+        }
+        
+        return -1 
+    }
+
+
+    //Test cases:
+    print(findPeakElement([6,5,4,3,2,3,2]))
