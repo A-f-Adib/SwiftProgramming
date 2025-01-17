@@ -16,4 +16,18 @@
             }
         }
     }
+
+//Iterate the matrix again and set zeros to those rows and cols that are in the set.
+    for i in 0..<matrix.count {
+        for j in 0..<matrix[0].count {
+            if rows.contains(i) || cols.contains(j) {
+                matrix[i][j] = 0
+            }
+        }
+    }
+    return matrix
  }
+
+ //test cases:
+
+ print(setZeroes([[1,1,1],[1,0,1],[1,1,1]]))
