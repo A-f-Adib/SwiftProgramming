@@ -32,4 +32,22 @@ func spiralOrder(_ matrix: [[Int]]) -> [Int] {
             result.append(matrix[endRow][j])
        }
 
-      
+       //for print left
+        for i in stride(from: endRow - 1, to: sRow + 1, by: -1) {
+            if sCol == endCol {
+                break
+            }
+            result.append(matrix[i][sCol])
+       }
+
+       //decrease the matrix
+       sRow += 1
+       sCol += 1
+       endRow -= 1
+       endCol -= 1
+    }
+    return result
+}
+
+print(spiralOrder([[1,2,3],[4,5,6],[7,8,9]]))
+
