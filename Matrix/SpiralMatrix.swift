@@ -18,4 +18,18 @@ func spiralOrder(_ matrix: [[Int]]) -> [Int] {
             result.append( matrix[sRow][j])
         }
 
-    }
+        //for print right
+        for i in (sRow + 1)...endRow {
+           
+            result.append(matrix[i][endCol])
+        }
+
+        //for print bottom
+       for j in stride(from: endCol - 1, to: sCol, by: -1) {
+            if sRow == endRow {
+                break
+            }
+            result.append(matrix[endRow][j])
+       }
+
+      
