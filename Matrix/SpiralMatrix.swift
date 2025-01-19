@@ -51,3 +51,24 @@ func spiralOrder(_ matrix: [[Int]]) -> [Int] {
 
 print(spiralOrder([[1,2,3],[4,5,6],[7,8,9]]))
 
+
+/*
+C++ Implementation:
+
+vector<int> spiralOrder(vector<vector<int>>& matrix) {
+    vector<int> result;
+    int m = matrix.size();
+    int n = matrix[0].size();
+    
+    int sRow = 0, sCol = 0;
+    int endRow = m - 1, endCol = n - 1;
+
+    while (sRow <= endRow && sCol <= endCol) {
+        // Traverse the top row
+        for (int j = sCol; j <= endCol; ++j) {
+            result.push_back(matrix[sRow][j]);
+        }
+
+     
+
+*/
