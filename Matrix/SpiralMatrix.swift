@@ -69,6 +69,31 @@ vector<int> spiralOrder(vector<vector<int>>& matrix) {
             result.push_back(matrix[sRow][j]);
         }
 
-     
+        // Traverse the right column
+        for (int i = sRow + 1; i <= endRow; ++i) {
+            result.push_back(matrix[i][endCol]);
+        }
+
+        // Traverse the bottom row
+        for (int j = endCol - 1; j >= sCol; --j) {
+            if (sRow == endRow) break;
+            result.push_back(matrix[endRow][j]);
+        }
+
+        // Traverse the left column
+        for (int i = endRow - 1; i >= sRow + 1; --i) {
+            if (sCol == endCol) break;
+            result.push_back(matrix[i][sCol]);
+        }
+
+        // Update the boundaries for the next layer
+        sRow++;
+        sCol++;
+        endRow--;
+        endCol--;
+    }
+
+    return result;
+}
 
 */
