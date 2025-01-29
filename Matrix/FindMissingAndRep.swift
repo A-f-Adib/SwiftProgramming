@@ -21,12 +21,18 @@ func findMissingAndRepeatedValues(_ grid: [[Int]]) -> [Int] {
         var ans : [Int] = []
         var set: Set<Int> = []
 
-        var a: Int
+        var a: Int = 0
         var b: Int
         let n = grid.count
 
+        var actualSum = 0
+        var expSum = 0
+        var calculatedSum = 0
+
         for i in 0..<n {
             for j in 0..<n {
+                actualSum += grid[i][j]
+
                 if set.contains(grid[i][j]) {
                     a = grid[i][j]
                     ans.append(a)
@@ -34,4 +40,16 @@ func findMissingAndRepeatedValues(_ grid: [[Int]]) -> [Int] {
                 set.insert(grid[i][j])
             }
         }
+
+        expSum = (n * n) * (n * n + 1) / 2
+        calculatedSum = actualSum - a
+        b = expSum - calculatedSum
+        ans.append(b)
+
+        return ans
 }
+
+//Test cases:
+
+print(findMissingAndRepeatedValues([[1,3],[2,2]]))
+print(findMissingAndRepeatedValues([[9,1,7],[8,9,2],[3,4,6]]))
