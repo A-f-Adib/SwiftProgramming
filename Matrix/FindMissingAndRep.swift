@@ -18,4 +18,20 @@ Explanation: Number 9 is repeated and number 5 is missing so the answer is [9,5]
 
 func findMissingAndRepeatedValues(_ grid: [[Int]]) -> [Int] {
         
+        var ans : [Int] = []
+        var set: Set<Int> = []
+
+        var a: Int
+        var b: Int
+        let n = grid.count
+
+        for i in 0..<n {
+            for j in 0..<n {
+                if set.contains(grid[i][j]) {
+                    a = grid[i][j]
+                    ans.append(a)
+                }
+                set.insert(grid[i][j])
+            }
+        }
 }
