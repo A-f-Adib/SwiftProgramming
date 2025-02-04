@@ -15,3 +15,14 @@ class Chef {
     }
 }
 
+class Waiter: ChefDelegate {
+    func foodIsReady(dish: String) {
+        print("Waiter: Serving \(dish) to the customer! 🍽️")
+    }
+}
+
+let chef = Chef()
+let waiter = Waiter()
+
+chef.delegate = waiter  // Assign the waiter as the chef’s delegate
+chef.cook()
