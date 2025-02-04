@@ -17,26 +17,34 @@ Output: 0
 Explanation: The result cannot be 2, because [-2,-1] is not a subarray.
 */
 
+
 func maxProduct(_ nums: [Int]) -> Int {
-       
-        guard !nums.isEmpty else { return 0 }
 
-        var ans = nums[0]
-        var maxSoFar = nums[0]
-        var minSoFar = nums[0]
-
-        for i in 1..<nums.count {
-            let curr = nums[i]
-
-            let tmpMax = max(curr, maxSoFar * curr, minSoFar * curr)
-            minSoFar = min(curr, maxSoFar * curr, minSoFar * curr)
-            maxSoFar = tmpMax
-
-            ans = max(ans, maxSoFar)
+    guard !nums.isEmpty else { return 0 } 
+    
+    var maxProduct = nums[0]  
+    var minProduct = nums[0] 
+    var result = nums[0]     
+    
+    for i in 1..<nums.count {
+        let num = nums[i]
+        
+        // If num is negative, swap maxProduct and minProduct
+        if num < 0 {
+            swap(&maxProduct, &minProduct)
         }
-
-        return ans
+        
+        // Update maxProduct and minProduct
+        maxProduct = max(num, num * maxProduct)
+        minProduct = min(num, num * minProduct)
+        
+        // Update the result (biggest product found)
+        result = max(result, maxProduct)
+    }
+    
+    return result
 }
+
 
 //Test cases:
 print(maxProduct([2,3,-2,4]))
