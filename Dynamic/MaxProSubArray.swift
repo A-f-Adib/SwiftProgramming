@@ -19,3 +19,8 @@ func maxProduct(_ nums: [Int]) -> Int {
 
         return ans
 }
+
+//Test cases:
+print(maxProduct([2,3,-2,4]))
+print(maxProduct([2,3,0,-2,-3,-5]))
+print(maxProduct([5,-2,1,-3,2,4]))
