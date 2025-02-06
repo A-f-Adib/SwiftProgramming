@@ -14,3 +14,13 @@ enum PaymentError: Error, LocalizedError {
         }
     }
 }
+
+func handlePayment() throws {
+    throw PaymentError.networkError
+}
+
+do {
+    try handlePayment()
+} catch {
+    print(error.localizedDescription)  // Output: There was a problem connecting to the network. Please try again.
+}
