@@ -25,3 +25,19 @@ struct DataIterator: AsyncIteratorProtocol {
         return "Item \(current)"
     }
 }
+
+func handleStream() async {
+    let stream = DataStream(count: 5)
+    do {
+        for try await item in stream {
+            print(item)
+        }
+    } catch {
+        print("Error handling stream: \(error)")
+    }
+}
+
+// Start stream handling
+Task {
+    await handleStream()
+}
