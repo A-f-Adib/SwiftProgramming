@@ -8,3 +8,20 @@ struct DataStream: AsyncSequence {
         return DataIterator(count: count)
     }
 }
+
+struct DataIterator: AsyncIteratorProtocol {
+    let count: Int
+    var current = 0
+    
+    mutating func next() async -> String? {
+        guard current < count else { return nil }
+        current += 1
+        do {
+            try await Task.sleep(nanoseconds: 1_000_000_000)  // Simulate delay
+        } catch {
+            print("Error during sleep: \(error)")
+            return nil
+        }
+        return "Item \(current)"
+    }
+}
