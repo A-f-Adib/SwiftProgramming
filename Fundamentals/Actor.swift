@@ -14,3 +14,18 @@ actor Counter {
     }
 }
 
+func testActor() async {
+    let counter = Counter()
+    
+    // Run tasks concurrently that modify the counter
+    await counter.increment()
+    await counter.increment()
+    
+    // Access the value
+    let count = await counter.getValue()
+    print("Counter value: \(count)")  // Output: Counter value: 2
+}
+
+Task {
+    await testActor()
+}
