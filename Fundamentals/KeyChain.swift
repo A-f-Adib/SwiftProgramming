@@ -36,3 +36,15 @@ func getFromKeychain(account: String) -> String? {
 // Usage
 saveToKeychain(account: "user_email", password: "secure123")
 print(getFromKeychain(account: "user_email") ?? "No password found") // Output: "secure123"
+
+/*
+Keychain uses key-value pairs, where you store a String (password, token, etc.) 
+under an account identifier (e.g., "user_email").
+
+iOS provides the Security framework, which includes:
+
+SecItemAdd → Save data
+SecItemCopyMatching → Retrieve data
+SecItemUpdate → Update existing data
+SecItemDelete → Remove data
+*/
