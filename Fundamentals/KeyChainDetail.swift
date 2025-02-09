@@ -59,11 +59,24 @@ func getFromKeychain(account: String) -> String? {
     return nil
 }
 
+
 //Update Data in Keychain:
 func updateKeychain(account: String, newPassword: String) {
+
     let query: [String: Any] = [
         kSecClass as String: kSecClassGenericPassword,
         kSecAttrAccount as String: account
     ]
-   
+    
+    let attributes: [String: Any] = [
+        kSecValueData as String: newPassword.data(using: .utf8)!
+    ]
+    
+    let status = SecItemUpdate(query as CFDictionary, attributes as CFDictionary)
+    
+    if status == errSecSuccess {
+        print("✅ Password updated successfully!")
+    } else {
+        print("❌ Failed to update password, status: \(status)")
+    }
 }
