@@ -117,3 +117,19 @@ deleteFromKeychain(account: "user_email")
 
 // Try retrieving again
 print(getFromKeychain(account: "user_email") ?? "No password found") // output: "No password found"
+
+
+
+//  Keychain with Face ID / Touch ID
+func getSecureKeychainItem(account: String) -> String? {
+
+    let query: [String: Any] = [
+        kSecClass as String: kSecClassGenericPassword,
+        kSecAttrAccount as String: account,
+        kSecReturnData as String: true,
+        kSecMatchLimit as String: kSecMatchLimitOne,
+        // kSecUseOperationPrompt as String: "Authenticate to access password"
+    ]
+    
+   
+}
