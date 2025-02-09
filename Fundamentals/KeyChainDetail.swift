@@ -84,7 +84,7 @@ func updateKeychain(account: String, newPassword: String) {
 
 //Delete Data from Keychain:
 func deleteFromKeychain(account: String) {
-    
+
     let query: [String: Any] = [
         kSecClass as String: kSecClassGenericPassword,
         kSecAttrAccount as String: account
@@ -98,3 +98,13 @@ func deleteFromKeychain(account: String) {
         print("❌ Failed to delete password, status: \(status)")
     }
 }
+
+
+// Save user password
+saveToKeychain(account: "user_email", password: "secure123")
+
+// Retrieve password
+print(getFromKeychain(account: "user_email") ?? "No password found")
+
+// Update password
+updateKeychain(account: "user_email", newPassword: "newSecure456")
