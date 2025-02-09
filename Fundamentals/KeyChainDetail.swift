@@ -80,3 +80,21 @@ func updateKeychain(account: String, newPassword: String) {
         print("❌ Failed to update password, status: \(status)")
     }
 }
+
+
+//Delete Data from Keychain:
+func deleteFromKeychain(account: String) {
+    
+    let query: [String: Any] = [
+        kSecClass as String: kSecClassGenericPassword,
+        kSecAttrAccount as String: account
+    ]
+    
+    let status = SecItemDelete(query as CFDictionary)
+    
+    if status == errSecSuccess {
+        print("✅ Password deleted successfully!")
+    } else {
+        print("❌ Failed to delete password, status: \(status)")
+    }
+}
