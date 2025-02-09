@@ -59,3 +59,11 @@ func getFromKeychain(account: String) -> String? {
     return nil
 }
 
+//Update Data in Keychain:
+func updateKeychain(account: String, newPassword: String) {
+    let query: [String: Any] = [
+        kSecClass as String: kSecClassGenericPassword,
+        kSecAttrAccount as String: account
+    ]
+   
+}
