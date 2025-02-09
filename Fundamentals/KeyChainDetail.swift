@@ -16,7 +16,7 @@ import Foundation
 
 //Save Data to Keychain:
 func saveToKeychain(account: String, password: String) {
-    
+
     let passwordData = password.data(using: .utf8)!
     
     let query: [String: Any] = [
@@ -37,3 +37,25 @@ func saveToKeychain(account: String, password: String) {
         print("❌ Failed to save password, status: \(status)")
     }
 }
+
+
+//Retrieve Data from Keychain:
+func getFromKeychain(account: String) -> String? {
+    let query: [String: Any] = [
+        kSecClass as String: kSecClassGenericPassword,
+        kSecAttrAccount as String: account,
+        kSecReturnData as String: true,
+        kSecMatchLimit as String: kSecMatchLimitOne // Get only one match
+    ]
+    
+    var result: AnyObject?
+    let status = SecItemCopyMatching(query as CFDictionary, &result)
+    
+    if status == errSecSuccess, let data = result as? Data {
+        return String(data: data, encoding: .utf8)
+    }
+    
+    print("❌ No password found for account: \(account)")
+    return nil
+}
+
