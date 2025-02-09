@@ -108,3 +108,12 @@ print(getFromKeychain(account: "user_email") ?? "No password found")
 
 // Update password
 updateKeychain(account: "user_email", newPassword: "newSecure456")
+
+// Retrieve updated password
+print(getFromKeychain(account: "user_email") ?? "No password found")
+
+// Delete password
+deleteFromKeychain(account: "user_email")
+
+// Try retrieving again
+print(getFromKeychain(account: "user_email") ?? "No password found") // output: "No password found"
