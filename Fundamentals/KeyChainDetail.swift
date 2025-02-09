@@ -102,19 +102,14 @@ func deleteFromKeychain(account: String) {
 
 // Save user password
 saveToKeychain(account: "user_email", password: "secure123")
-
 // Retrieve password
 print(getFromKeychain(account: "user_email") ?? "No password found")
-
 // Update password
 updateKeychain(account: "user_email", newPassword: "newSecure456")
-
 // Retrieve updated password
 print(getFromKeychain(account: "user_email") ?? "No password found")
-
 // Delete password
 deleteFromKeychain(account: "user_email")
-
 // Try retrieving again
 print(getFromKeychain(account: "user_email") ?? "No password found") // output: "No password found"
 
@@ -122,7 +117,7 @@ print(getFromKeychain(account: "user_email") ?? "No password found") // output: 
 
 //  Keychain with Face ID / Touch ID
 func getSecureKeychainItem(account: String) -> String? {
-
+    
     let query: [String: Any] = [
         kSecClass as String: kSecClassGenericPassword,
         kSecAttrAccount as String: account,
@@ -130,6 +125,16 @@ func getSecureKeychainItem(account: String) -> String? {
         kSecMatchLimit as String: kSecMatchLimitOne,
         // kSecUseOperationPrompt as String: "Authenticate to access password"
     ]
+    var result: AnyObject?
+    let status = SecItemCopyMatching(query as CFDictionary, &result)
     
-   
+    if status == errSecSuccess, let data = result as? Data {
+        return String(data: data, encoding: .utf8)
+    }
+    
+    print("❌ Authentication failed or no password found.")
+    return nil
 }
+
+// Usage
+print(getSecureKeychainItem(account: "user_email") ?? "No password found")
