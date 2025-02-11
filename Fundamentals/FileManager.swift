@@ -59,3 +59,19 @@ class FileManagerHelper {
     }
 }
 
+// Example Usage
+var users = FileManagerHelper.loadUsers()
+
+// Add a new user
+users.append(User(name: "Alice", age: 25))
+
+// Save updated users
+FileManagerHelper.saveUsers(users)
+
+// Display all users
+print("All Users:")
+users = FileManagerHelper.loadUsers()
+for user in users {
+    print("Name: \(user.name), Age: \(user.age)")
+}
+
