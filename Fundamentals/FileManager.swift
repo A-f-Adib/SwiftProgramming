@@ -45,5 +45,17 @@ class FileManagerHelper {
         }
     }
     
+    // Load users from file
+    static func loadUsers() -> [User] {
+        let decoder = JSONDecoder()
+        do {
+            let data = try Data(contentsOf: filePath)
+            let users = try decoder.decode([User].self, from: data)
+            return users
+        } catch {
+            print("Error loading users: \(error)")
+            return []
+        }
+    }
 }
 
