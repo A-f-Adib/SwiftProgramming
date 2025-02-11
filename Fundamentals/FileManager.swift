@@ -18,3 +18,32 @@ func readFromFile() -> String? {
 // Usage
 saveToFile(text: "Hello, iOS!")
 print(readFromFile() ?? "No data") // Output: "Hello, iOS!"
+
+
+//-----------------------------------------------------------------------------------------------
+
+// New User Model
+struct User: Codable {
+    var name: String
+    var age: Int
+}
+
+// FileManager Helper
+class FileManagerHelper {
+    static let fileName = "users.json"
+    static let filePath = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent(fileName)
+    
+    // Save users to file
+    static func saveUsers(_ users: [User]) {
+        let encoder = JSONEncoder()
+        do {
+            let data = try encoder.encode(users)
+            try data.write(to: filePath, options: .atomic)
+            print("Users saved to file.")
+        } catch {
+            print("Error saving users: \(error)")
+        }
+    }
+    
+}
+
