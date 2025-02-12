@@ -77,5 +77,18 @@ indirect enum ArithmeticExpression {
     case addition(ArithmeticExpression, ArithmeticExpression)
     case multiplication(ArithmeticExpression, ArithmeticExpression)
 
-    
+    func evaluate() -> Int {
+        switch self {
+        case .number(let value):
+            return value
+        case .addition(let left, let right):
+            return left.evaluate() + right.evaluate()
+        case .multiplication(let left, let right):
+            return left.evaluate() * right.evaluate()
+        }
+    }
 }
+
+// Example Usage
+let expression = ArithmeticExpression.addition(.number(2), .multiplication(.number(3), .number(4)))
+print(expression.evaluate()) // ✅ 2 + (3 * 4) = 14
