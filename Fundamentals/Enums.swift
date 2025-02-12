@@ -105,3 +105,16 @@ enum FileState {
 let file1 = FileState.found(size: 1024)
 let file2 = FileState.found(size: nil)
 let file3 = FileState.notFound
+
+func checkFile(_ file: FileState) {
+    switch file {
+    case .notFound:
+        print("File not found")
+    case .found(let size):
+        print("File found. Size: \(size ?? 0) KB") // ✅ If size is nil, show 0 KB
+    }
+}
+
+checkFile(file1) // ✅ File found. Size: 1024 KB
+checkFile(file2) // ✅ File found. Size: 0 KB
+checkFile(file3) // ✅ File not found
