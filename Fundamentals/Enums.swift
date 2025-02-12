@@ -49,3 +49,8 @@ enum Planet {
         }
     }
 }
+
+// Example Usage
+let myPlanet = Planet.earth
+print("Is habitable? \(myPlanet.isHabitable)") // ✅ Is habitable? true
+print("Distance from sun: \(myPlanet.distanceFromSun()) million km") // ✅ 149.6 million km
