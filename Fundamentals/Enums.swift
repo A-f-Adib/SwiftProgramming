@@ -25,3 +25,27 @@ let payment2 = PaymentMethod.paypal(email: "user@example.com")
 
 processPayment(payment1)
 processPayment(payment2)
+
+//-----------------------------------------------------
+
+//enum with computed properties
+enum Planet {
+    case mercury, venus, earth, mars, jupiter, saturn, uranus, neptune
+    
+    var isHabitable: Bool {
+        return self == .earth
+    }
+    
+    func distanceFromSun() -> Double {
+        switch self {
+        case .mercury: return 57.9
+        case .venus: return 108.2
+        case .earth: return 149.6
+        case .mars: return 227.9
+        case .jupiter: return 778.3
+        case .saturn: return 1427
+        case .uranus: return 2871
+        case .neptune: return 4495
+        }
+    }
+}
