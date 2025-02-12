@@ -92,3 +92,16 @@ indirect enum ArithmeticExpression {
 // Example Usage
 let expression = ArithmeticExpression.addition(.number(2), .multiplication(.number(3), .number(4)))
 print(expression.evaluate()) // ✅ 2 + (3 * 4) = 14
+
+
+//-----------------------------------------------------
+
+//Optional Enum
+enum FileState {
+    case notFound
+    case found(size: Int?)
+}
+
+let file1 = FileState.found(size: 1024)
+let file2 = FileState.found(size: nil)
+let file3 = FileState.notFound
