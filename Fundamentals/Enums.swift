@@ -67,3 +67,15 @@ enum StatusCode: Int {
 
 let code = StatusCode.success
 print("Status code: \(code.rawValue)") // ✅ Status code: 200
+
+
+//-----------------------------------------------------
+
+//Recursive Enum
+indirect enum ArithmeticExpression {
+    case number(Int)
+    case addition(ArithmeticExpression, ArithmeticExpression)
+    case multiplication(ArithmeticExpression, ArithmeticExpression)
+
+    
+}
