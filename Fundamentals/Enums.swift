@@ -54,3 +54,16 @@ enum Planet {
 let myPlanet = Planet.earth
 print("Is habitable? \(myPlanet.isHabitable)") // ✅ Is habitable? true
 print("Distance from sun: \(myPlanet.distanceFromSun()) million km") // ✅ 149.6 million km
+
+
+//-----------------------------------------------------
+
+//Enum with raw values
+enum StatusCode: Int {
+    case success = 200
+    case unauthorized = 401
+    case notFound = 404
+}
+
+let code = StatusCode.success
+print("Status code: \(code.rawValue)") // ✅ Status code: 200
