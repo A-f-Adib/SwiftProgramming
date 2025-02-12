@@ -19,3 +19,9 @@ func processPayment(_ method: PaymentMethod) {
     }
 }
 
+// Example Usage
+let payment1 = PaymentMethod.creditCard(number: "1234-5678-9012-3456", expiryDate: "12/26")
+let payment2 = PaymentMethod.paypal(email: "user@example.com")
+
+processPayment(payment1)
+processPayment(payment2)
