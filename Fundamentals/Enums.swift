@@ -118,3 +118,28 @@ func checkFile(_ file: FileState) {
 checkFile(file1) // ✅ File found. Size: 1024 KB
 checkFile(file2) // ✅ File found. Size: 0 KB
 checkFile(file3) // ✅ File not found
+
+//-----------------------------------------------------
+
+//Enum with optional computed property
+enum OrderStatus {
+    case pending
+    case shipped(trackingNumber: String?)
+    case delivered
+
+    var trackingInfo: String? {
+        switch self {
+        case .shipped(let trackingNumber):
+            return trackingNumber // Might be nil
+        default:
+            return nil // No tracking info for other cases
+        }
+    }
+}
+
+let order1 = OrderStatus.shipped(trackingNumber: "12345")
+let order2 = OrderStatus.shipped(trackingNumber: nil)
+
+print(order1.trackingInfo ?? "No tracking available") // ✅ 12345
+print(order2.trackingInfo ?? "No tracking available") // ✅ No tracking available
+
