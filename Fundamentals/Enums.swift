@@ -161,3 +161,13 @@ if case .success(let data) = response, let validData = data {
     print("No data received") // ✅ No data received
 }
 
+// Using guard case
+func handleResponse(_ response: APIResponse) {
+    guard case .success(let data) = response, let validData = data else {
+        print("No valid data")
+        return
+    }
+    print("Processing data: \(validData)")
+}
+
+handleResponse(response) // ✅ No valid data
