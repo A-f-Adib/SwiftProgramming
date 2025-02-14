@@ -171,3 +171,22 @@ func handleResponse(_ response: APIResponse) {
 }
 
 handleResponse(response) // ✅ No valid data
+
+
+//-------------------------------------------------------------------------------
+
+//Nested optional enum
+enum UserProfile {
+    case registered(name: String?)
+    case guest
+}
+
+var profile: UserProfile? = .registered(name: nil)
+
+// Double optional: UserProfile? -> registered(name: String?)
+if case let .registered(name) = profile, let validName = name {
+    print("User: \(validName)")
+} else {
+    print("No valid user found") // ✅ No valid user found
+}
+
