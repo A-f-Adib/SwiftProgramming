@@ -143,3 +143,21 @@ let order2 = OrderStatus.shipped(trackingNumber: nil)
 print(order1.trackingInfo ?? "No tracking available") // ✅ 12345
 print(order2.trackingInfo ?? "No tracking available") // ✅ No tracking available
 
+
+//-------------------------------------------------------------
+
+//Enum with Optional Pattern Matching
+enum APIResponse {
+    case success(data: String?)
+    case error(message: String)
+}
+
+let response = APIResponse.success(data: nil)
+
+// Using if case
+if case .success(let data) = response, let validData = data {
+    print("Received data: \(validData)")
+} else {
+    print("No data received") // ✅ No data received
+}
+
