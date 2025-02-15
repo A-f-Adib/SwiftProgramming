@@ -109,3 +109,23 @@ func fetchSafeData(from source: String) async throws -> String {
 Task {
     await fetchAllSafeData()
 }
+
+//-----------------------------------------------------
+
+//5️⃣ Limiting Concurrency with Task Groups
+
+import Foundation
+
+func processImages() async {
+    let imageIDs = (1...1000).map { "image_\($0)" }
+    
+    await withTaskGroup(of: Void.self) { group in
+        let maxConcurrentTasks = 5
+        var activeTasks = 0
+        
+        for id in imageIDs {
+            while activeTasks >= maxConcurrentTasks {
+                await Task.yield() // Pause to avoid blocking
+            }
+            
+           
