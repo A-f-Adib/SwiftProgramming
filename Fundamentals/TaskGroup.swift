@@ -128,4 +128,20 @@ func processImages() async {
                 await Task.yield() // Pause to avoid blocking
             }
             
-           
+            group.addTask {
+                activeTasks += 1
+                await processImage(id: id)
+                activeTasks -= 1
+            }
+        }
+    }
+}
+
+func processImage(id: String) async {
+    try? await Task.sleep(nanoseconds: 500_000_000) // Simulating processing time
+    print("🖼 Processed \(id)")
+}
+
+Task {
+    await processImages()
+}
