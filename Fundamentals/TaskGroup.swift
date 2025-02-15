@@ -54,3 +54,13 @@ func fetchAllData() async -> [String] {
         return results
     }
 }
+
+func fetchData(from source: String) async -> String? {
+    try? await Task.sleep(nanoseconds: UInt64.random(in: 1_000_000_000...3_000_000_000))
+    return "✅ Data from \(source)"
+}
+
+Task {
+    let results = await fetchAllData()
+    print(results) // ✅ ["✅ Data from weatherAPI", "✅ Data from stockAPI", "✅ Data from newsAPI"]
+}
