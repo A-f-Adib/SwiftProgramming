@@ -64,3 +64,25 @@ Task {
     let results = await fetchAllData()
     print(results) // ✅ ["✅ Data from weatherAPI", "✅ Data from stockAPI", "✅ Data from newsAPI"]
 }
+
+
+//-----------------------------------------------------
+
+//task group with error handling
+
+enum DataError: Error {
+    case fetchFailed
+}
+
+func fetchAllSafeData() async {
+    do {
+        let results = try await withThrowingTaskGroup(of: String.self) { group -> [String] in
+            var results: [String] = []
+            
+            let sources = ["weather", "stock", "news", "crypto"]
+            
+            for source in sources {
+                group.addTask {
+                    return try await fetchSafeData(from: source)
+           
+}
