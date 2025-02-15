@@ -99,3 +99,13 @@ func fetchAllSafeData() async {
         print("❌ Error: \(error)")
     }
 }
+
+func fetchSafeData(from source: String) async throws -> String {
+    if Bool.random() { throw DataError.fetchFailed } // Simulating failure randomly
+    try? await Task.sleep(nanoseconds: UInt64.random(in: 1_000_000_000...2_000_000_000))
+    return "📊 Data from \(source)"
+}
+
+Task {
+    await fetchAllSafeData()
+}
