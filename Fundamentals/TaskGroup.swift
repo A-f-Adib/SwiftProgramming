@@ -84,5 +84,18 @@ func fetchAllSafeData() async {
             for source in sources {
                 group.addTask {
                     return try await fetchSafeData(from: source)
-           
+                }
+            }
+            
+            for try await result in group {
+                results.append(result)
+            }
+            
+            return results
+        }
+        
+        print("✅ Success: \(results)")
+    } catch {
+        print("❌ Error: \(error)")
+    }
 }
