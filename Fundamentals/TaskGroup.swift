@@ -39,5 +39,18 @@ func fetchAllData() async -> [String] {
         
         let urls = ["weatherAPI", "stockAPI", "newsAPI"]
         
+        for url in urls {
+            group.addTask {
+                return await fetchData(from: url)
+            }
+        }
+        
+        for await data in group {
+            if let data = data {
+                results.append(data)
+            }
+        }
+        
+        return results
     }
 }
