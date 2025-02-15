@@ -30,3 +30,14 @@ func fetchStockData() async -> String {
 Task {
     await fetchData()
 }
+
+//-----------------------------------------------------
+
+func fetchAllData() async -> [String] {
+    await withTaskGroup(of: String?.self) { group in
+        var results: [String] = []
+        
+        let urls = ["weatherAPI", "stockAPI", "newsAPI"]
+        
+    }
+}
