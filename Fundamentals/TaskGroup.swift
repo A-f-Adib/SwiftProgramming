@@ -166,6 +166,21 @@ func fetchProductData() async {
                         }
                     }
                     
-                    
+                    for await productDetail in innerGroup {
+                        print(productDetail)
+                    }
+                }
+                
+                return "✅ Completed category: \(category)"
+            }
+        }
+        
+        for await result in group {
+            print(result)
+        }
     }
+}
+
+Task {
+    await fetchProductData()
 }
