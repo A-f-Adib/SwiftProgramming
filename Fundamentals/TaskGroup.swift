@@ -145,3 +145,27 @@ func processImage(id: String) async {
 Task {
     await processImages()
 }
+
+
+//-----------------------------------------------------------
+
+//nested task group
+
+func fetchProductData() async {
+    await withTaskGroup(of: String.self) { group in
+        let categories = ["Electronics", "Fashion", "Books"]
+        
+        for category in categories {
+            group.addTask {
+                await withTaskGroup(of: String.self) { innerGroup in
+                    let products = ["Product A", "Product B", "Product C"]
+                    
+                    for product in products {
+                        innerGroup.addTask {
+                            return "🔹 \(category) -> \(product)"
+                        }
+                    }
+                    
+                    
+    }
+}
