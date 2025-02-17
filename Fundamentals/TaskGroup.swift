@@ -184,3 +184,23 @@ func fetchProductData() async {
 Task {
     await fetchProductData()
 }
+
+
+//-----------------------------------------------------------
+//Manually cancelling tasks
+
+import Foundation
+
+func fetchDataWithCancellation() async {
+    await withTaskGroup(of: String?.self) { group in
+        let sources = ["API 1", "API 2", "API 3", "API 4"]
+        
+        for source in sources {
+            group.addTask {
+                if Task.isCancelled { return nil } // Check for cancellation
+                return await fetchData(from: source)
+            }
+        }
+        
+    }
+}
