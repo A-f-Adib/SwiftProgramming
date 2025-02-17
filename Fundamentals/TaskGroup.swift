@@ -202,5 +202,16 @@ func fetchDataWithCancellation() async {
             }
         }
         
+        // Simulating early cancellation
+        try? await Task.sleep(for: .seconds(1)) // Simulating a delay before cancellation
+        group.cancelAll() // Cancels all tasks in the group
+        
+        for await result in group {
+            if let result = result {
+                print("✅ Received: \(result)")
+            } else {
+                print("❌ Task was cancelled")
+            }
+        }
     }
 }
