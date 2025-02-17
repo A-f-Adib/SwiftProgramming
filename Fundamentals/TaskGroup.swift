@@ -215,3 +215,12 @@ func fetchDataWithCancellation() async {
         }
     }
 }
+
+func fetchData(from source: String) async -> String {
+    try? await Task.sleep(nanoseconds: 2_000_000_000) // Simulating delay
+    return "Data from \(source)"
+}
+
+Task {
+    await fetchDataWithCancellation()
+}
