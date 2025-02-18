@@ -259,3 +259,18 @@ func fetchLowPriorityData() async -> String {
 Task {
     await fetchDataWithPriority()
 }
+
+
+//-----------------------------------------------------------
+
+//parallel task group
+
+func fetchAllData() async {
+    async let users = fetchUsers()
+    async let posts = fetchPosts()
+
+    let (userResults, postResults) = await (users, posts)
+    
+    print("Users: \(userResults)")
+    print("Posts: \(postResults)")
+}
