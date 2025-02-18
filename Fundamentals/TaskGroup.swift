@@ -224,3 +224,24 @@ func fetchData(from source: String) async -> String {
 Task {
     await fetchDataWithCancellation()
 }
+
+
+//-----------------------------------------------------------
+
+//Priotizing task group
+
+func fetchDataWithPriority() async {
+    await withTaskGroup(of: String.self) { group in
+        group.addTask(priority: .high) {
+            return await fetchCriticalData()
+        }
+        
+        group.addTask(priority: .background) {
+            return await fetchLowPriorityData()
+        }
+        
+        for await result in group {
+            print("✅ \(result)")
+        }
+    }
+}
