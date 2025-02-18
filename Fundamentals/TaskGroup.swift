@@ -245,3 +245,17 @@ func fetchDataWithPriority() async {
         }
     }
 }
+
+func fetchCriticalData() async -> String {
+    try? await Task.sleep(nanoseconds: 1_000_000_000)
+    return "🚀 Critical Data"
+}
+
+func fetchLowPriorityData() async -> String {
+    try? await Task.sleep(nanoseconds: 2_000_000_000)
+    return "📄 Background Data"
+}
+
+Task {
+    await fetchDataWithPriority()
+}
