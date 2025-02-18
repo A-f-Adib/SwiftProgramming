@@ -294,3 +294,22 @@ func fetchUsers() async -> [String] {
         return users
     }
 }
+
+func fetchPosts() async -> [String] {
+    await withTaskGroup(of: String.self) { group in
+        var posts: [String] = []
+        let postIds = [100, 101, 102]
+
+        for id in postIds {
+            group.addTask {
+                return await fetchPost(id: id)
+            }
+        }
+
+        for await post in group {
+            posts.append(post)
+        }
+
+        return posts
+    }
+}
