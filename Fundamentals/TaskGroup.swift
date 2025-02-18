@@ -265,7 +265,7 @@ Task {
 
 //parallel task group
 
-func fetchAllData() async {
+func fetchAllData2() async {
     async let users = fetchUsers()
     async let posts = fetchPosts()
 
@@ -312,4 +312,18 @@ func fetchPosts() async -> [String] {
 
         return posts
     }
+}
+
+func fetchUser(id: Int) async -> String {
+    try? await Task.sleep(nanoseconds: UInt64.random(in: 500_000_000...1_500_000_000))
+    return "👤 User \(id)"
+}
+
+func fetchPost(id: Int) async -> String {
+    try? await Task.sleep(nanoseconds: UInt64.random(in: 500_000_000...1_500_000_000))
+    return "📝 Post \(id)"
+}
+
+Task {
+    await fetchAllData2()
 }
