@@ -327,3 +327,25 @@ func fetchPost(id: Int) async -> String {
 Task {
     await fetchAllData2()
 }
+
+//----------------------------------------------------------------
+
+//task group with dependencies
+
+func fetchOrderData() async {
+    await withTaskGroup(of: String.self) { group in
+        let orders = ["Order 1", "Order 2", "Order 3"]
+
+        for order in orders {
+            group.addTask {
+                await withTaskGroup(of: String.self) { innerGroup in
+                    let items = ["Item A", "Item B", "Item C"]
+                    
+                    for item in items {
+                        innerGroup.addTask {
+                            return "\(order) -> \(item)"
+                        }
+                    }
+
+    }
+}
