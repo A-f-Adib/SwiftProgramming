@@ -347,5 +347,21 @@ func fetchOrderData() async {
                         }
                     }
 
+                    for await itemDetail in innerGroup {
+                        print("📦 \(itemDetail)")
+                    }
+                }
+                
+                return "✅ Completed \(order)"
+            }
+        }
+
+        for await result in group {
+            print(result)
+        }
     }
+}
+
+Task {
+    await fetchOrderData()
 }
