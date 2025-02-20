@@ -346,22 +346,26 @@ func fetchOrderData() async {
                             return "\(order) -> \(item)"
                         }
                     }
-
                     for await itemDetail in innerGroup {
                         print("📦 \(itemDetail)")
                     }
                 }
-                
                 return "✅ Completed \(order)"
             }
         }
-
         for await result in group {
             print(result)
         }
     }
 }
-
 Task {
     await fetchOrderData()
+}
+
+//----------------------------------------------------------------
+
+
+func processImage2(id: String) async {
+    try? await Task.sleep(nanoseconds: UInt64.random(in: 500_000_000...1_000_000_000))
+    print("🖼 Processed \(id)")
 }
