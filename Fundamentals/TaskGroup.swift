@@ -364,3 +364,20 @@ Task {
 
 //----------------------------------------------------------------
 
+import Foundation
+
+func fetchNewWeatherData() async {
+    async let temp = fetchTemperature()
+    async let humidity = fetchHumidity()
+    async let wind = fetchWindSpeed()
+
+    let (t, h, w) = await (temp, humidity, wind)
+    print("🌡️ Temp: \(t), 💧 Humidity: \(h), 🌬️ Wind: \(w)")
+}
+
+func fetchTemperature() async -> String {
+    try? await Task.sleep(nanoseconds: 500_000_000)
+    return "22°C"
+}
+
+
