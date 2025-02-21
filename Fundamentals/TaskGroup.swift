@@ -380,4 +380,17 @@ func fetchTemperature() async -> String {
     return "22°C"
 }
 
+func fetchHumidity() async -> String {
+    try? await Task.sleep(nanoseconds: 500_000_000)
+    return "60%"
+}
+
+func fetchWindSpeed() async -> String {
+    try? await Task.sleep(nanoseconds: 500_000_000)
+    return "15 km/h"
+}
+
+Task {
+    await fetchNewWeatherData()
+}
 
