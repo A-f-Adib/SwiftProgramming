@@ -36,3 +36,24 @@ This reduces code duplication and enhances reusability.
 Here, The Car class inherits from Vehicle, gaining its properties (speed) and methods (accelerate).
 Car introduces a new property (brand) and a method (honk) specific to its functionality.
 */
+
+//-----------------------------------------------------------
+
+//Multiple inheritance using protocols
+
+class Vehicle2 {
+    var speed: Int = 0
+    
+    func accelerate() {
+        speed += 10
+        print("Speed increased to \(speed) km/h")
+    }
+}
+
+protocol Electric {
+    func chargeBattery()
+}
+
+protocol SelfDriving {
+    func activateAutopilot()
+}
