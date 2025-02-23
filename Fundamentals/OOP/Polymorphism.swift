@@ -38,3 +38,14 @@ Method overriding allows subclasses to provide specific implementations of metho
 that are already defined in their superclass. This enables a common interface to be shared 
 across different subclasses while allowing each subclass to define its own version of the method.
 */
+
+
+//-----------------------------------------------------------
+
+//Method overloading
+/*
+This type of polymorphism is resolved at compile-time, usually through 
+method overloading and operator overloading.
+In Swift, method overloading occurs when multiple methods with the same name 
+exist but with different parameter types or numbers.
+*/
