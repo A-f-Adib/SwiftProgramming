@@ -22,3 +22,17 @@ class Car: Vehicle {
         print("\(brand) goes Beep Beep!")
     }
 }
+
+let myCar = Car(brand: "Tesla")
+myCar.accelerate()  // Speed increased to 10 km/h
+myCar.honk()        // Tesla goes Beep Beep!
+
+//-----------------------------------------------------------
+
+/*
+Inheritance allows a class (subclass) to acquire properties and methods from another class (superclass). 
+This reduces code duplication and enhances reusability.
+
+Here, The Car class inherits from Vehicle, gaining its properties (speed) and methods (accelerate).
+Car introduces a new property (brand) and a method (honk) specific to its functionality.
+*/
