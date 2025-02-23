@@ -57,3 +57,19 @@ protocol Electric {
 protocol SelfDriving {
     func activateAutopilot()
 }
+
+// Tesla inherits from Vehicle and conforms to multiple protocols
+class Tesla: Vehicle2, Electric, SelfDriving {
+    func chargeBattery() {
+        print("Battery charging...")
+    }
+    
+    func activateAutopilot() {
+        print("Autopilot activated!")
+    }
+}
+
+let myTesla = Tesla()
+myTesla.accelerate()        // Speed increased to 10 km/h
+myTesla.chargeBattery()     // Battery charging...
+myTesla.activateAutopilot() // Autopilot activated!
