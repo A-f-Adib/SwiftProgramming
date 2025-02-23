@@ -43,6 +43,24 @@ across different subclasses while allowing each subclass to define its own versi
 //-----------------------------------------------------------
 
 //Method overloading
+
+class Calculator {
+    func add(_ a: Int, _ b: Int) -> Int {
+        return a + b
+    }
+    
+    func add(_ a: Double, _ b: Double) -> Double {
+        return a + b
+    }
+}
+
+let calc = Calculator()
+let intSum = calc.add(5, 3)           // Calls the Int version of add
+let doubleSum = calc.add(5.5, 3.3)    // Calls the Double version of add
+
+print(intSum)    // Output: 8
+print(doubleSum) // Output: 8.8
+
 /*
 This type of polymorphism is resolved at compile-time, usually through 
 method overloading and operator overloading.
