@@ -73,3 +73,20 @@ let myTesla = Tesla()
 myTesla.accelerate()        // Speed increased to 10 km/h
 myTesla.chargeBattery()     // Battery charging...
 myTesla.activateAutopilot() // Autopilot activated!
+
+
+//-----------------------------------------------------------
+
+//Composition instead of multiple inheritance
+
+class Engine {
+    func start() {
+        print("Engine started!")
+    }
+}
+
+class Wheels {
+    func rotate() {
+        print("Wheels rotating!")
+    }
+}
