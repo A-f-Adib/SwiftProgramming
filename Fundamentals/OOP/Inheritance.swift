@@ -90,3 +90,20 @@ class Wheels {
         print("Wheels rotating!")
     }
 }
+
+class SecondCar {
+    let engine = Engine()
+    let wheels = Wheels()
+    
+    func drive() {
+        engine.start()
+        wheels.rotate()
+        print("Car is driving!")
+    }
+}
+
+let mySecondCar = SecondCar()
+mySecondCar.drive()
+// Engine started!
+// Wheels rotating!
+// Car is driving!
