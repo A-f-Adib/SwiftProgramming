@@ -1,3 +1,9 @@
+/*
+Polymorphism is one of the fundamental principles of Object-Oriented Programming (OOP), 
+allowing different objects to be treated as instances of the same class through a common interface, 
+while retaining their distinct behaviors. It allows you to define a single interface for entities 
+of different types, promoting flexibility and scalability in code.
+*/
 
 //Method overriding
 
@@ -26,3 +32,9 @@ let cat: Animal = Cat()
 
 dog.makeSound()  // Woof! Woof!
 cat.makeSound()  // Meow! Meow!
+
+/*
+Method overriding allows subclasses to provide specific implementations of methods 
+that are already defined in their superclass. This enables a common interface to be shared 
+across different subclasses while allowing each subclass to define its own version of the method.
+*/
