@@ -108,3 +108,20 @@ The same method name (startEngine()) is used across different types, but each ty
 */
 
 //-----------------------------------------------------------
+
+//Polymorphism with Protocol Extensions
+
+protocol Describable {
+    func describe() -> String
+}
+
+extension Describable {
+    func describe() -> String {
+        return "This is a describable object"
+    }
+}
+
+class Car2: Describable {
+    // Inherits the default describe method from the protocol extension
+}
+
