@@ -67,3 +67,20 @@ method overloading and operator overloading.
 In Swift, method overloading occurs when multiple methods with the same name 
 exist but with different parameter types or numbers.
 */
+
+
+//-----------------------------------------------------------
+
+//Polymorphism with Protocol
+
+protocol Vehicle {
+    func startEngine()
+}
+
+class Car: Vehicle {
+    func startEngine() {
+        print("Car engine started")
+    }
+}
+
+
