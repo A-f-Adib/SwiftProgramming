@@ -83,4 +83,14 @@ class Car: Vehicle {
     }
 }
 
+class Motorcycle: Vehicle {
+    func startEngine() {
+        print("Motorcycle engine started")
+    }
+}
 
+let vehicles: [Vehicle] = [Car(), Motorcycle()]
+
+for vehicle in vehicles {
+    vehicle.startEngine()   // Different implementations based on the actual object
+}
