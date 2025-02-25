@@ -144,3 +144,17 @@ while ensuring default implementations are used when needed.
 Both Car and House inherit the default describe() method from the Describable protocol extension, 
 allowing them to share a common interface.
 */
+
+//-----------------------------------------------------------
+
+//Polymorphism with Generics
+
+protocol Drivable {
+    func drive()
+}
+
+class Car3: Drivable {
+    func drive() {
+        print("Driving a car")
+    }
+}
