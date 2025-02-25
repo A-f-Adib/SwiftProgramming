@@ -94,3 +94,17 @@ let vehicles: [Vehicle] = [Car(), Motorcycle()]
 for vehicle in vehicles {
     vehicle.startEngine()   // Different implementations based on the actual object
 }
+
+// Output:
+// Car engine started
+// Motorcycle engine started
+
+/*
+The Vehicle protocol defines a common interface (startEngine()).
+Both Car and Motorcycle conform to this protocol, but each has its own 
+implementation of the startEngine() method.
+The same method name (startEngine()) is used across different types, but each type
+ has its own behavior.
+*/
+
+//-----------------------------------------------------------
