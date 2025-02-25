@@ -125,3 +125,22 @@ class Car2: Describable {
     // Inherits the default describe method from the protocol extension
 }
 
+class House: Describable {
+    // Inherits the default describe method from the protocol extension
+}
+
+let objects: [Describable] = [Car2(), House()]
+
+for object in objects {
+    print(object.describe())  // Using default behavior defined in protocol extension
+}
+
+// Output:
+// This is a describable object
+// This is a describable object
+/*
+Protocol extensions provide default behavior for methods in a protocol, enabling polymorphism 
+while ensuring default implementations are used when needed.
+Both Car and House inherit the default describe() method from the Describable protocol extension, 
+allowing them to share a common interface.
+*/
