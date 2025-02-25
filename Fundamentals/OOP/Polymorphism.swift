@@ -169,4 +169,17 @@ func driveVehicle2<T: Drivable>(_ vehicle: T) {
     vehicle.drive()
 }
 
+let car = Car3()
+let truck = Truck()
+
+driveVehicle2(car)   // Driving a car
+driveVehicle2(truck) // Driving a truck
+
+/*
+driveVehicle<T: Drivable>(_:) is a generic function that works with any type that conforms 
+to the Drivable protocol.
+This allows you to use the same function to drive both a Car and a Truck.
+Generics provide another level of polymorphism by allowing different types to be 
+handled in a uniform way.
+*/
 
