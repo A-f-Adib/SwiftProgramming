@@ -158,3 +158,15 @@ class Car3: Drivable {
         print("Driving a car")
     }
 }
+
+class Truck: Drivable {
+    func drive() {
+        print("Driving a truck")
+    }
+}
+
+func driveVehicle2<T: Drivable>(_ vehicle: T) {
+    vehicle.drive()
+}
+
+
