@@ -45,3 +45,15 @@ class DiscountService2 {
         return discount.apply(to: amount)
     }
 }
+
+let service = DiscountService2()
+let percentageDiscount = PercentageDiscount()
+let flatDiscount = FlatDiscount()
+
+print(service.applyDiscount(amount: 100, discount: percentageDiscount)) // 90.0
+print(service.applyDiscount(amount: 100, discount: flatDiscount)) // 90.0
+
+/*
+New discount types can be added without modifying existing classes.
+The Discount protocol allows extensibility while keeping the DiscountService unchanged.
+*/
