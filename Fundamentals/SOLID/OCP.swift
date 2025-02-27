@@ -33,3 +33,15 @@ class PercentageDiscount: Discount {
         return amount * 0.9
     }
 }
+
+class FlatDiscount: Discount {
+    func apply(to amount: Double) -> Double {
+        return amount - 10.0
+    }
+}
+
+class DiscountService2 {
+    func applyDiscount(amount: Double, discount: Discount) -> Double {
+        return discount.apply(to: amount)
+    }
+}
