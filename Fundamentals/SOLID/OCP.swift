@@ -21,3 +21,15 @@ class DiscountService {
         }
     }
 }
+
+//Using OCP with Protocols & Extensions
+
+protocol Discount {
+    func apply(to amount: Double) -> Double
+}
+
+class PercentageDiscount: Discount {
+    func apply(to amount: Double) -> Double {
+        return amount * 0.9
+    }
+}
