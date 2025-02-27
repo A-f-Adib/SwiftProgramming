@@ -9,3 +9,17 @@ maintainable, and easy to understand.
 import Foundation
 
 // Violation of SRP
+
+class UserManager {
+
+    func saveUserData() {
+        print("Saving user data to database")
+    }
+    
+    func sendEmailVerification() {
+        print("Sending verification email")
+    }
+}
+//UserManager is responsible for both saving user data and sending email verification.
+//This violates SRP because changing the database logic would affect email sending.
+
