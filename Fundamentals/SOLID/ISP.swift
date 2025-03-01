@@ -23,3 +23,19 @@ class Manager: Worker {
 //Manager is forced to implement writeCode(), which is irrelevant.
 
 //----------------------------------------------------
+
+//Following the ISP (Spliting interfaces)
+
+protocol Workable {
+    func work()
+}
+
+protocol Breakable {
+    func takeBreak()
+}
+
+protocol Worker {
+    func work()
+    func takeBreak()
+    func writeCode()
+}
