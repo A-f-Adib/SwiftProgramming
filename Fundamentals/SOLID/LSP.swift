@@ -37,3 +37,12 @@ func printArea(of rectangle: Rectangle) {
 
 printArea(of: Square(width: 5, height: 5)) // Unexpected behavior!
 
+//----------------------------------------------------
+
+//Following the LSP
+
+import Foundation
+
+protocol Shape {
+    func area() -> Double
+}
