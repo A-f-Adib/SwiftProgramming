@@ -41,8 +41,6 @@ printArea(of: Square(width: 5, height: 5)) // Unexpected behavior!
 
 //Following the LSP
 
-import Foundation
-
 protocol Shape {
     func area() -> Double
 }
@@ -60,3 +58,26 @@ class Rectangle2: Shape {
         return width * height
     }
 }
+
+class Square2: Shape {
+    var side: Double
+
+    init(side: Double) {
+        self.side = side
+    }
+
+    func area() -> Double {
+        return side * side
+    }
+}
+
+func printArea(of shape: Shape) {
+    print("Area: \(shape.area())")
+}
+
+printArea(of: Rectangle2(width: 5, height: 10)) // Area: 50
+printArea(of: Square2(side: 5)) // Area: 25
+
+
+//No inheritance issues because Square and Rectangle are independent.
+// Both classes implement a common interface (Shape) and can be used interchangeably.
