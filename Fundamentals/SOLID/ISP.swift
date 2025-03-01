@@ -34,8 +34,6 @@ protocol Breakable {
     func takeBreak()
 }
 
-protocol Worker {
-    func work()
-    func takeBreak()
+protocol Coder {
     func writeCode()
 }
