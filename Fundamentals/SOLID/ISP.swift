@@ -37,3 +37,18 @@ protocol Breakable {
 protocol Coder {
     func writeCode()
 }
+
+
+class Developer: Workable, Breakable, Coder {
+    func work() { print("Writing code") }
+    func takeBreak() { print("Taking a break") }
+    func writeCode() { print("Coding...") }
+}
+
+class Manager2: Workable, Breakable {
+    func work() { print("Managing team") }
+    func takeBreak() { print("Taking a break") }
+}
+
+//Now, Manager2 does not have to implement writeCode() method.
+//Developer class has to implement all methods, but they are split into separate protocols.
