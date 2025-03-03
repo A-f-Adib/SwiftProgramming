@@ -21,3 +21,18 @@ class UserRepository {
         database.fetchData()
     }
 }
+//UserRepository depends on a concrete class, making it hard to switch databases.
+
+//----------------------------------------------------
+
+//Following DIP
+
+protocol Database {
+    func fetchData()
+}
+
+class MySQLDatabase2 : Database {
+    func fetchData() {
+        print("Fetching data from MySQL")
+    }
+}
