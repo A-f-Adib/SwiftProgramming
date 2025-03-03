@@ -36,3 +36,21 @@ class MySQLDatabase2 : Database {
         print("Fetching data from MySQL")
     }
 }
+
+class UserRepository2 {
+    let database: Database
+
+    init(database: Database) {
+        self.database = database
+    }
+
+    func getUsers() {
+        database.fetchData()
+    }
+}
+
+let repository = UserRepository2(database: MySQLDatabase2())
+repository.getUsers() // ✅ Works with any database!
+
+//Now, UserRepository2 depends on an abstraction (Database protocol) instead of a concrete class.
+//This makes it easier to switch databases in the future.
