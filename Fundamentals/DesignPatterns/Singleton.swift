@@ -24,3 +24,13 @@ DispatchQueue.global().async {
 //----------------------------------------------------------------------------------------
 
 //Singleton with Dependency Injection
+
+class APIManager {
+    static let shared = APIManager() // Singleton instance
+    
+    private init() {} // Private initializer
+    
+    func fetchData() {
+        print("Fetching data from API...")
+    }
+}
