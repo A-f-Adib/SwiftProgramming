@@ -57,3 +57,9 @@ class AndroidButtonFactory: ButtonFactoryProtocol {
     }
 }
 
+//Usage
+let factory: ButtonFactoryProtocol = iOSButtonFactory()
+let button2 = factory.createButton()
+button2.render() // Output: iOS Button Rendered
+
+
