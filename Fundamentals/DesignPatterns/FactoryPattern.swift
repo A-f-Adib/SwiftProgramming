@@ -51,3 +51,9 @@ class iOSButtonFactory: ButtonFactoryProtocol {
     }
 }
 
+class AndroidButtonFactory: ButtonFactoryProtocol {
+    func createButton() -> Button {
+        return AndroidButton()
+    }
+}
+
