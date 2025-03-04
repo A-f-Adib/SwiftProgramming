@@ -32,3 +32,14 @@ class ButtonFactory {
         }
     }
 }
+
+let button = ButtonFactory.createButton(for: "iOS")
+button.render() // Output: iOS Button Rendered
+
+//------------------------------------------------------------
+
+//Factory Protocol
+protocol ButtonFactoryProtocol {
+    func createButton() -> Button
+}
+
