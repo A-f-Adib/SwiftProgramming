@@ -43,3 +43,11 @@ protocol ButtonFactoryProtocol {
     func createButton() -> Button
 }
 
+
+//Concrete Factories
+class iOSButtonFactory: ButtonFactoryProtocol {
+    func createButton() -> Button {
+        return iOSButton()
+    }
+}
+
