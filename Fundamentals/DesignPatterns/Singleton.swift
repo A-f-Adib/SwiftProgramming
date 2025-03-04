@@ -16,3 +16,11 @@ class Logger {
 DispatchQueue.global().async {
     Logger.shared.log(message: "Background thread log")
 }
+
+//Swift’s static let is already thread-safe
+//This means that the shared instance is only created when it is accessed for the first time,
+// and it is guaranteed to be thread-safe.
+
+//----------------------------------------------------------------------------------------
+
+//Singleton with Dependency Injection
