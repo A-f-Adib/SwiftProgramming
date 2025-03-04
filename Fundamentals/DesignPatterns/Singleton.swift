@@ -46,3 +46,16 @@ class UserService {
         apiManager.fetchData()
     }
 }
+
+// Usage:
+let userService = UserService()
+userService.getUser()
+
+//----------------------------------------------------------------------------------------
+
+//UserDefaults Singleton 
+
+UserDefaults.standard.set("John", forKey: "username")
+let username = UserDefaults.standard.string(forKey: "username")
+print(username ?? "No username") // "John"
+
