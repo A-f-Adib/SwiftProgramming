@@ -34,3 +34,15 @@ class APIManager {
         print("Fetching data from API...")
     }
 }
+
+class UserService {
+    private let apiManager: APIManager
+    
+    init(apiManager: APIManager = .shared) { // Allows injection
+        self.apiManager = apiManager
+    }
+
+    func getUser() {
+        apiManager.fetchData()
+    }
+}
