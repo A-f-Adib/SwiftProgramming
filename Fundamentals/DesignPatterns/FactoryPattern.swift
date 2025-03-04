@@ -62,4 +62,23 @@ let factory: ButtonFactoryProtocol = iOSButtonFactory()
 let button2 = factory.createButton()
 button2.render() // Output: iOS Button Rendered
 
+//------------------------------------------------------------
+
+//UIAlertController Factory
+
+#if canImport(UIKit)
+import UIKit
+
+class AlertFactory {
+    static func createAlert(title: String, message: String) -> UIAlertController {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        return alert
+    }
+}
+
+// Usage:
+let alert = AlertFactory.createAlert(title: "Warning", message: "Something went wrong!")
+#endif
+
 
