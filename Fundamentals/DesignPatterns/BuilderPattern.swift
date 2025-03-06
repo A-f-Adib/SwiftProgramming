@@ -83,4 +83,14 @@ class URLRequestBuilder {
         self.url = url
         return self
     }
+
+    func setMethod(_ method: String) -> URLRequestBuilder {
+        self.method = method
+        return self
+    }
+
+    func addHeader(key: String, value: String) -> URLRequestBuilder {
+        self.headers[key] = value
+        return self
+    }
 }
