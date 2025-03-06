@@ -102,3 +102,12 @@ class URLRequestBuilder {
         return request
     }
 }
+
+// Usage:
+if let request = URLRequestBuilder()
+    .setURL("https://api.example.com")
+    .setMethod("POST")
+    .addHeader(key: "Authorization", value: "Bearer token")
+    .build() {
+    print(request)
+}
