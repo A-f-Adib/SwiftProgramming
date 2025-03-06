@@ -26,7 +26,7 @@ class Burger {
     }
 }
 
-//Step 2: Define the Builder
+//Step 2: create the Builder
 class BurgerBuilder {
     private var cheese = false
     private var lettuce = false
@@ -35,6 +35,21 @@ class BurgerBuilder {
 
     func addCheese() -> BurgerBuilder {
         self.cheese = true
+        return self
+    }
+
+    func addLettuce() -> BurgerBuilder {
+        self.lettuce = true
+        return self
+    }
+
+    func addTomato() -> BurgerBuilder {
+        self.tomato = true
+        return self
+    }
+
+    func addBacon() -> BurgerBuilder {
+        self.bacon = true
         return self
     }
 }
