@@ -93,4 +93,12 @@ class URLRequestBuilder {
         self.headers[key] = value
         return self
     }
+
+    func build() -> URLRequest? {
+        guard let url = URL(string: self.url) else { return nil }
+        var request = URLRequest(url: url)
+        request.httpMethod = method
+        request.allHTTPHeaderFields = headers
+        return request
+    }
 }
