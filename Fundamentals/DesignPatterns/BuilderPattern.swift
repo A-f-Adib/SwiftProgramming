@@ -67,3 +67,15 @@ let burger = BurgerBuilder()
     .build()
 
 burger.description() // Output: Burger with Cheese Lettuce Bacon
+
+//------------------------------------------------------------
+
+//URL Requests with Builder Pattern
+
+import Foundation
+
+class URLRequestBuilder {
+    private var url: String = ""
+    private var method: String = "GET"
+    private var headers: [String: String] = [:]
+}
