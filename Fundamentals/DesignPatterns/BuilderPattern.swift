@@ -52,4 +52,18 @@ class BurgerBuilder {
         self.bacon = true
         return self
     }
+
+     func build() -> Burger {
+        return Burger(cheese: cheese, lettuce: lettuce, tomato: tomato, bacon: bacon)
+    }
 }
+
+//Step 3: Use the Builder
+
+let burger = BurgerBuilder()
+    .addCheese()
+    .addLettuce()
+    .addBacon()
+    .build()
+
+burger.description() // Output: Burger with Cheese Lettuce Bacon
