@@ -8,9 +8,20 @@ objects step by step instead of requiring a large initializer with multiple para
 import Foundation
 
 class Burger {
-    
+
     let cheese: Bool
     let lettuce: Bool
     let tomato: Bool
     let bacon: Bool
+
+     init(cheese: Bool, lettuce: Bool, tomato: Bool, bacon: Bool) {
+        self.cheese = cheese
+        self.lettuce = lettuce
+        self.tomato = tomato
+        self.bacon = bacon
+    }
+
+    func description() {
+        print("Burger with\(cheese ? " Cheese" : "")\(lettuce ? " Lettuce" : "")\(tomato ? " Tomato" : "")\(bacon ? " Bacon" : "")")
+    }
 }
