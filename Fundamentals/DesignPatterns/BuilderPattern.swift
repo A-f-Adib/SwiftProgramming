@@ -25,3 +25,16 @@ class Burger {
         print("Burger with\(cheese ? " Cheese" : "")\(lettuce ? " Lettuce" : "")\(tomato ? " Tomato" : "")\(bacon ? " Bacon" : "")")
     }
 }
+
+//Step 2: Define the Builder
+class BurgerBuilder {
+    private var cheese = false
+    private var lettuce = false
+    private var tomato = false
+    private var bacon = false
+
+    func addCheese() -> BurgerBuilder {
+        self.cheese = true
+        return self
+    }
+}
