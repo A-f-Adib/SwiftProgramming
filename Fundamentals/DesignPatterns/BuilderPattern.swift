@@ -78,4 +78,9 @@ class URLRequestBuilder {
     private var url: String = ""
     private var method: String = "GET"
     private var headers: [String: String] = [:]
+
+    func setURL(_ url: String) -> URLRequestBuilder {
+        self.url = url
+        return self
+    }
 }
