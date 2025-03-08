@@ -42,3 +42,20 @@ adapter.playSong(url: "https://spotify.com/song123")
 // Playing MP3 file: https://spotify.com/song123.mp3
 
 
+//-------------------------------------------------------------------------------
+
+//Adapting JSON Parsing
+
+//Step 1: Define Legacy JSON Parser
+class LegacyJSONParser {
+    func parse(json: NSDictionary) {
+        print("Parsing JSON using NSDictionary: \(json)")
+    }
+}
+
+//Step 2: Define the New Codable Protocol
+protocol ModernJSONParser {
+    func parse<T: Codable>(json: T)
+}
+
+
