@@ -58,4 +58,31 @@ protocol ModernJSONParser {
     func parse<T: Codable>(json: T)
 }
 
+//Step 3: Create an Adapter
+class JSONAdapter: ModernJSONParser {
+    private var legacyParser: LegacyJSONParser
+
+    init(legacyParser: LegacyJSONParser) {
+        self.legacyParser = legacyParser
+    }
+
+    func parse<T: Codable>(json: T) {
+        // Convert Codable object to NSDictionary (Simulated)
+        let dict = ["data": "Converted from Codable"] as NSDictionary
+        legacyParser.parse(json: dict)
+    }
+}
+
+//Step 4: Use the Adapter
+let legacyParser = LegacyJSONParser()
+let adapter2 = JSONAdapter(legacyParser: legacyParser)
+
+struct User: Codable {
+    let name: String
+}
+
+let user = User(name: "John Doe")
+adapter2.parse(json: user)
+// Output:
+// Parsing JSON using NSDictionary: ["data": "Converted from Codable"]
 
