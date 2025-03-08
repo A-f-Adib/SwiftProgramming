@@ -32,3 +32,13 @@ class MP3Adapter: MusicStreamingService {
     }
 }
 
+//Step 4: Use the Adapter
+let oldMP3Player = MP3Player()
+let adapter = MP3Adapter(mp3Player: oldMP3Player)
+
+adapter.playSong(url: "https://spotify.com/song123")
+// Output:
+// Converting streaming URL to MP3 format...
+// Playing MP3 file: https://spotify.com/song123.mp3
+
+
