@@ -16,3 +16,19 @@ class MP3Player {
 protocol MusicStreamingService {
     func playSong(url: String)
 }
+
+//Step 3: Create the Adapter
+class MP3Adapter: MusicStreamingService {
+    private var mp3Player: MP3Player
+
+    init(mp3Player: MP3Player) {
+        self.mp3Player = mp3Player
+    }
+
+    func playSong(url: String) {
+        print("Converting streaming URL to MP3 format...")
+        let mp3File = url + ".mp3" // Simulating conversion
+        mp3Player.playMP3(file: mp3File)
+    }
+}
+
